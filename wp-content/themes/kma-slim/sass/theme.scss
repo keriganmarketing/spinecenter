@@ -1,0 +1,1856 @@
+// Theme Specific Styles
+
+// Full page Layout
+html {
+  height: 100%;
+}
+
+body {
+  height: auto !important;
+  min-height: 100%;
+  overflow-x: initial;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+
+  .navbar {
+    width: 100%;
+    background-color: transparent;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+  }
+
+  .navbar-menu {
+    background-color: #000;
+    align-items: center;
+
+    @media screen and (min-width: $desktop) {
+      background-color: transparent;
+    }
+  }
+
+  .input,
+  .button {
+    padding-left: 1.25em;
+    padding-right: 1.25em;
+    height: 3rem;
+  }
+
+  .select {
+    select {
+      padding-left: 1.25em;
+      height: 3rem;
+    }
+  }
+  .select::after {
+    margin-top: 0;
+  }
+
+  .section-wrapper {
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container-fluid {
+    width:100%;
+  }
+
+  #MobileNavMenu {
+    display: block;
+    width: 250px;
+    height: 100%;
+    left:100%;
+    right: -250px;
+    top: 0;
+    z-index: 3;
+    position: fixed;
+    overflow: hidden;
+    -webkit-transition: all linear .5s;
+    -moz-transition: all linear .5s;
+    -ms-transition: all linear .5s;
+    -o-transition: all linear .5s;
+    transition: all linear .5s;
+    @media screen and (min-width:370px){
+      width: 270px;
+      right:-270px
+    }
+  }
+  #MobileNavMenu.is-active {
+    width: 250px;
+    left: auto;
+    right: 0;
+    box-shadow: 0 0 7px rgba(0,0,0,0.2);
+    background-color: #FFF;
+    overflow-y: scroll;
+    @media screen and (min-width:370px){
+      width: 270px;
+    }
+
+    #mobile-menu {
+      .navbar-item:nth-child(1),
+      .navbar-item:nth-child(9) {
+        background-color: #cecaa3;
+      }
+      .navbar-item:nth-child(2),
+      .navbar-item:nth-child(10) {
+        background-color: #93b5b9;
+      }
+      .navbar-item:nth-child(3),
+      .navbar-item:nth-child(11) {
+        background-color: #8a9fa4;
+      }
+      .navbar-item:nth-child(4) { background-color: #b3aec3; }
+      .navbar-item:nth-child(5) { background-color: #927596; }
+      .navbar-item:nth-child(6) { background-color: #ae9a92; }
+      .navbar-item:nth-child(7) { background-color: #c9bb9b; }
+      .navbar-item:nth-child(8) { background-color: #d9ac66; }
+
+      .navbar-item{
+        padding:0;
+
+        a strong,
+        a {
+          color: #FFF !important;
+          background-color: transparent !important;
+        }
+        a::after {
+          float:right;
+          content: "\025B8";
+          border: none;
+          -webkit-transform: none;
+          transform: none;
+          margin-top: 0;
+          top: auto;
+          font-size: 1.65em;
+          line-height: 1em;
+          bottom: 18px;
+        }
+        a {
+          padding: 1.5rem .5rem 1.5rem .75rem;
+          @media screen and (min-width: 375px) {
+            padding: 1.5rem .5rem 1.5rem 1.5rem;
+          }
+
+        }
+
+        .navbar-dropdown {
+          font-size: 1.2rem;
+          padding-bottom: 0.5rem;
+          padding-top: 0.25rem;
+          transition: height .5s;
+          height: 0;
+          display: none;
+        }
+      }
+
+      .navbar-item {
+        .navbar-dropdown.is-open {
+          height: auto;
+          display: block;
+        }
+      }
+
+    }
+  }
+
+  .site-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+
+    -webkit-transition: all linear .5s;
+    -moz-transition: all linear .5s;
+    -ms-transition: all linear .5s;
+    -o-transition: all linear .5s;
+    transition: all linear .5s;
+    position: relative;
+  }
+
+  .site-wrapper.menu-open {
+    width: 100%;
+    transform: translate(-250px, 0);
+    position: fixed;
+    -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, .5);
+    top: 0;
+    @media screen and (min-width:370px){
+      transform: translate(-270px, 0);
+    }
+
+    .site-mobile-overlay {
+      position: absolute;
+      height: 100vh;
+      width: 100vh;
+      background-color: rgba(0,0,0,0.3);
+      z-index: 3;
+    }
+  }
+
+  .site-wrapper.full-height {
+    height: 100vh;
+  }
+
+  .container {
+    max-width: 100%;
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+      max-width: 817px;
+      width: 817px;
+    }
+    @media screen and (min-width: $desktop) {
+      max-width: 1008px;
+      width: 1008px;
+    }
+    @media screen and (min-width: $widescreen) {
+      max-width: 1200px;
+      width: 1200px;
+    }
+    @media screen and (min-width: $fullhd) {
+      max-width: 1458px;
+      width: 1458px;
+    }
+  }
+
+  .container.semi-fluid {
+    max-width: 100%;
+    width: 100%;
+
+    @media screen and (min-width: $fullhd) {
+      max-width: 1458px;
+      width: 1458px;
+    }
+  }
+
+}
+
+#top {
+  width: 100%;
+  position: relative;
+  z-index: 3;
+  background-color: $primary;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  min-height: 90px;
+  padding: 0;
+
+  #main-logo {
+    display: block;
+    img {
+      width: 170px;
+      margin: 0 20px -52px 0;
+
+      @media screen and (min-width: $desktop) {
+        width: 209px;
+        margin: 10px 20px -42px 0;
+      }
+      @media screen and (min-width: $widescreen) {
+        margin: 10px 20px -42px 0;
+      }
+    }
+  }
+
+  //IE override
+  @media screen and (-ms-high-contrast: active), screen and (-ms-high-contrast: none) {
+    /* IE10+ specific styles go here */
+    padding-top: 1.5rem;
+
+    a img {
+      border: none;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    position: fixed;
+    align-items: center;
+  }
+
+  @media screen and (max-width: $desktop) {
+    .container {
+      width: 100%;
+      margin: 0;
+    }
+  }
+
+  .navbar {
+
+    @media screen and (max-width: $widescreen) {
+      flex-direction: column-reverse;
+    }
+
+    .navbar-brand {
+      overflow: hidden;
+      img {
+        max-height: 45px;
+        margin: .65rem .75rem 0 1.5rem;
+      }
+      @media screen and (min-width: 1007px) {
+        display: none;
+      }
+
+      .navbar-burger {
+        height: 2.25rem;
+        width: 2.6rem;
+        background-color: #FFF;
+        margin: .6rem 1rem 1.4rem auto;
+
+        span {
+          background-color: #000;
+          display: block;
+          height: 2px;
+          left: 50%;
+          width: 15px;
+        }
+      }
+
+      .navbar-burger::after {
+        content: "MENU";
+        font-size:13px;
+        color:#FFF;
+        display: block;
+        margin: 2.2rem 0 0 0;
+      }
+
+    }
+
+    .navbar-start {
+      align-items: flex-end;
+    }
+
+    .navbar-item {
+      text-align: left;
+      padding: 1.95rem 1.5rem .5rem;
+      color: #FFF;
+      font-weight: normal;
+
+      @media screen and (min-width: $desktop) {
+        padding: 1.95rem 1.75rem .5rem .75rem;
+      }
+      @media screen and (min-width: $widescreen) {
+        padding: 1.95rem 1.5rem .5rem .5rem;
+      }
+      @media screen and (min-width: $fullhd) {
+        padding: 1.95rem 1.75rem .5rem .75rem;
+      }
+
+      a {
+        display: block;
+        color: #FFF;
+        text-transform: uppercase;
+        font-size: .8em;
+        font-weight: $weight-bold;
+
+        @media screen and (min-width: $desktop) {
+          span {
+            display: block;
+            font-size: .8em;
+            line-height: .9em;
+            font-weight: $weight-normal;
+          }
+          span::after {
+            content: "\A";
+          }
+        }
+      }
+      a.navbar-link::after {
+        right: -14px;
+        content: "\025BE";
+        border: none;
+        -webkit-transform: none;
+        transform: none;
+        margin-top: 0;
+        top: auto;
+        font-size: 1.65em;
+        line-height: 1em;
+        bottom: 18px;
+      }
+
+      a {
+        padding: 0.5rem 0;
+        background-color: transparent;
+      }
+
+      a:hover {
+        background-color: transparent;
+      }
+
+    }
+
+    @media screen and (min-width: $desktop) {
+      .navbar-dropdown {
+        background-color: $info;
+        padding: 1rem 0;
+        border-top: 5px solid $dark;
+        a.menu-item {
+          color: $primary;
+          padding: .5rem 1rem;
+          font-size: .9em;
+        }
+        a.menu-item:hover {
+          background-color: rgba(200,200,200,.25);
+        }
+      }
+    }
+
+    .navbar-end {
+      text-align: center;
+      width: 282px;
+
+      @media screen and (max-width: $widescreen){
+        width: 100%;
+        background-color: $dark;
+      }
+
+      @media screen and (min-width: $tablet){
+        text-align: right;
+      }
+
+      .same-day-appts {
+        padding: .25rem;
+        span {
+          color: $white;
+          display: inline-block;
+          padding-right: .5rem;
+
+          @media screen and (max-width: $tablet) {
+            width: 100%;
+          }
+
+          @media screen and (min-width: $widescreen) {
+            width: 100%;
+          }
+
+          a {
+            color: $white;
+          }
+        }
+
+        .small {
+          font-size: 11px;
+        }
+        .normal {
+          font-size: 16px;
+        }
+        .large {
+          font-size: 23px;
+          font-weight: $weight-bold;
+        }
+
+        a.navbar-link::after {
+          content: "\025B8";
+
+          @media screen and (max-width: $tablet) {
+            right: -22px;
+            position: absolute;
+            content: "\025B8";
+            border: none;
+            -webkit-transform: none;
+            transform: none;
+            margin-top: 0;
+            top: auto;
+            font-size: 1.65em;
+            line-height: 1em;
+            bottom: 8px;
+          }
+        }
+      }
+    }
+
+  }
+
+  @media screen and (min-width: $widescreen) {
+    .top-slash::before {
+      content: "";
+      position: absolute;
+      background-color: $dark;
+      width: 100%;
+      height: 105px;
+      z-index: -1;
+      bottom: 0;
+      transform: skewX(25deg);
+      margin-left: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .top-pad {
+    height: 0px;
+    width: 100%;
+    padding-top: 90px;
+  }
+}
+
+//Slider
+.home-slider {
+  height: 260px;
+
+  @media screen and (min-width: 768px) {
+    height: 350px;
+  }
+  @media screen and (min-width: $tablet) {
+    height: 420px;
+  }
+  @media screen and (min-width: $desktop) {
+    height: 620px;
+  }
+  @media screen and (min-width: $fullhd) {
+    height: 820px;
+  }
+}
+
+.home {
+  h2 {
+    font-weight: 200;
+    margin: 4rem 2rem;
+    font-size: 20px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 30px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 40px;
+      margin: 4rem 0;
+    }
+    @media screen and (min-width: $fullhd) {
+      font-size: 50px;
+      margin: 6rem 9rem 4rem 0;
+    }
+  }
+
+  h2.line-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 30px;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 50px;
+    }
+
+    span {
+      padding: 0 .5rem 0 .5rem;
+    }
+
+    span.line {
+      flex-grow: 1;
+      border-bottom: 1px solid rgba(150, 150, 150, .6);
+    }
+  }
+
+  h2.line-right.light {
+    color: $white;
+
+    span.line {
+      //border-color: $white;
+    }
+  }
+
+  h2.line-right.line-left {
+    justify-content: space-between;
+    margin: 4rem 0rem;
+  }
+}
+
+//MID
+#mid {
+  background-color: #FFF;
+
+  section.header.section {
+    background: #eee7cc;
+    background: -moz-linear-gradient(45deg, #eee7cc 0%, #ffffff 100%);
+    background: -webkit-linear-gradient(45deg, #eee7cc 0%,#ffffff 100%);
+    background: linear-gradient(45deg, #eee7cc 0%,#ffffff 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eee7cc', endColorstr='#ffffff',GradientType=1 );
+    padding: 4rem 1.5rem;
+    background-size: cover;
+
+    @media screen and (min-width:470px){
+      background-position: center;
+    }
+
+    .title.is-1 {
+      font-size: 1.7em;
+
+      @media screen and (min-width: 370px) {
+        font-size: 2.1em;
+      }
+      @media screen and (min-width: 400px) {
+        font-size: 2.4em;
+      }
+      @media screen and (min-width: $tablet) {
+        font-size: 40px;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 50px;
+      }
+
+      span.subtitle {
+        display: block;
+        line-height: 1rem;
+        margin-top: 0;
+      }
+
+      span.subtitle::before {
+        content: "\A";
+      }
+    }
+  }
+
+  section.header.section.has-background {
+    .title {
+      color: #FFF !important;
+    }
+  }
+
+  .entry-content {
+
+
+    ul, p {
+
+      @media screen and (min-width: $widescreen){
+        font-size: 1.3em;
+      }
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+    h1 {
+       color: #7fa53f;
+       font-weight: 200;
+       font-size: 1.6em;
+
+       @media screen and (min-width: 370px) {
+         font-size: 1.8em;
+       }
+       @media screen and (min-width: 400px) {
+         font-size: 2em;
+       }
+       @media screen and (min-width: $tablet) {
+         font-size: 2.2em;
+       }
+       @media screen and (min-width: $desktop) {
+         font-size: 2.4em;
+       }
+
+     }
+
+    h2 {
+      color: #333333;
+      font-weight: 600;
+      font-size: 1.4em;
+
+      @media screen and (min-width: 370px) {
+        font-size: 1.6em;
+      }
+      @media screen and (min-width: 400px) {
+        font-size: 1.8em;
+      }
+      //@media screen and (min-width: $tablet) {
+      //  font-size: 2.2em;
+      //}
+      //@media screen and (min-width: $desktop) {
+      //  font-size: 2.4em;
+      //}
+
+    }
+
+    h3 {
+      color: #333333;
+      font-weight: 600;
+      font-size: 1.1em;
+
+      @media screen and (min-width: 370px) {
+        font-size: 1.3em;
+      }
+      @media screen and (min-width: 400px) {
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  .breadcrumb-section {
+    padding: .5rem 1.5rem;
+
+    .breadcrumbs {
+      padding: .25rem 0;
+
+      span {
+        font-size: 12px;
+
+        a {
+          display: inline-block;
+          padding: 0 .25rem;
+        }
+        strong {
+          padding: 0 .25rem;
+          color: #7fa53f;
+        }
+      }
+    }
+  }
+
+}
+
+.appointment-box {
+  position: relative !important;
+  overflow: visible !important;
+  z-index: 2 !important;
+  width: 100%;
+
+  @media screen and (min-width: $desktop) {
+    position: absolute !important;
+  }
+
+  .appointment-box-container {
+    padding: 1.5rem;
+    background-color: rgba(245,244,238,.85);
+    box-shadow: 0 0 30px rgba(0,0,0,.3);
+    width: 100%;
+
+    @media screen and (min-width: $desktop) {
+      padding: 2rem;
+      margin: 5rem 0 0;
+      width: 550px;
+    }
+
+    @media screen and (min-width: $widescreen) {
+      padding: 2.5rem;
+      margin: 5rem 1rem 0;
+      width: 600px;
+    }
+
+    @media screen and (min-width: $fullhd) {
+      padding: 3.5rem;
+      margin: 5rem 3rem 0;
+      width: 650px;
+    }
+  }
+}
+
+.home-page-text {
+  background-color: #FFF;
+  padding: 5rem 0;
+  text-align: left;
+
+  @media screen and (max-width: $tablet) {
+    padding: 3rem 2rem;
+  }
+
+  h1.title {
+    color: $primary;
+    font-weight: $weight-light;
+    margin-bottom: 2rem;
+    text-align: left;
+    font-size: 1.7em;
+
+    @media screen and (min-width: 370px) {
+      font-size: 2.1em;
+    }
+    @media screen and (min-width: 400px) {
+      font-size: 2.4em;
+    }
+    @media screen and (min-width: $tablet) {
+      font-size: 40px;
+    }
+    @media screen and (min-width: $desktop) {
+      font-size: 53px;
+    }
+  }
+
+  .content {
+    p {
+      @media screen and (min-width: $tablet) {
+        font-size: 18px;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 19px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    .mid-slash::after {
+      content: "";
+      height: 100vh;
+      background-color: #f5f4ee;
+      width: 100%;
+      position: absolute;
+      z-index: -1;
+      transform: skewX(-15deg);
+      top: -68px;
+    }
+  }
+
+  .review-module {
+    padding: 4rem;
+
+    h3 {
+      font-weight: $weight-semibold;
+    }
+
+    .open-quote {
+      font-size: 2.3em;
+      font-family: Georgia;
+      font-weight: bold !important;
+      position: relative;
+      display: inline-block;
+      margin-bottom: -41px;
+      line-height: .1em;
+      vertical-align: middle;
+    }
+
+    .review-text {
+      padding-left: 4.5rem;
+      font-weight: $weight-semibold;
+      font-style: italic;
+    }
+
+    .review-author {
+      padding: .75rem 0 .75rem 4.5rem;
+      font-weight: $weight-bold;
+      font-style: italic;
+    }
+
+    .more-reviews-link {
+      font-size: .9em;
+      font-weight: $weight-bold;
+      text-transform: uppercase;
+      color: $black;
+      text-decoration: underline;
+      margin: .75rem 0 0 4.5rem;
+    }
+
+  }
+}
+
+//video Gallery
+.home-video-area{
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#114471+0,0f5d75+100 */
+  background: #114471; /* Old browsers */
+  background: -moz-linear-gradient(top, #114471 0%, #0f5d75 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #114471 0%,#0f5d75 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #114471 0%,#0f5d75 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#114471', endColorstr='#0f5d75',GradientType=0 ); /* IE6-9 */
+
+  box-shadow: inset 0 0 80px rgba(0,0,0,.2);
+
+  padding-bottom: 4rem;
+
+  .title {
+    font-weight: $weight-semibold;
+  }
+
+  .subtitle {
+    margin-top: -3.5rem;
+    color: $white;
+    font-weight: $weight-semibold;
+  }
+
+  .columns {
+    padding: 0 3rem;
+  }
+
+  .image-link {
+    display: block;
+    padding: 3px;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+
+    img {
+      display: block;
+    }
+  }
+
+  .video-button {
+    margin-top: -70px;
+    margin-right: 22px;
+  }
+}
+
+//Physician Carousel
+.doctor-carousel {
+  background-color: #FFF;
+  padding: 4rem 0;
+
+  .slick-slider {
+    display: flex;
+    padding: 2rem .5rem;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: $desktop) {
+      padding: 2rem;
+    }
+
+    .bubble-icon {
+      border: 1px solid $primary;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      height: 50px;
+      min-width: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+
+      i.fa {
+        font-size: 1.3em;
+        color: $primary;
+      }
+
+    }
+
+    .bubble-icon:hover {
+      border: 1px solid #fff;
+      background-color: $dark;
+      i.fa {
+        color: #FFF;
+      }
+    }
+
+    .bubble-icon.left {
+      padding-right: .35rem;
+    }
+    .bubble-icon.right {
+      padding-left: .35rem;
+    }
+
+    .mini-physician-thumb {
+      margin-bottom: 1rem;
+
+      .image {
+        width: 150px;
+        height: 150px;
+      }
+
+      .physician-name {
+        font-size: 16px;
+        text-transform: uppercase;
+        font-weight: $weight-semibold;
+        margin: 1rem 0;
+        @media screen and (min-width: $desktop){
+          font-size: 20px;
+        }
+      }
+
+      .physician-specialties {
+        display: none;
+        font-size: 14px;
+        line-height: 1.4em;
+        @media screen and (min-width: $desktop){
+          font-size: 18px;
+        }
+      }
+
+      .physician-link {
+        margin: 1rem 0;
+        font-size: 12px;
+        text-transform: uppercase;
+
+        a {
+          text-decoration: underline;
+          color: $black;
+          font-weight: $weight-semibold;
+        }
+      }
+
+    }
+
+  }
+}
+
+.doctor-gallery {
+  padding-bottom:3rem;
+
+  .physician-gallery-thumb {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+
+    a.button.is-primary.is-outlined {
+      margin: 0 1rem 3rem;
+      @media screen and (min-width: $fullhd){
+        margin: 0 2rem 4rem;
+      }
+    }
+  }
+
+  .mini-physician-thumb {
+    margin-bottom: 1rem;
+
+    .image {
+      width: 200px;
+      height: 200px;
+    }
+
+    .physician-name {
+      font-size: 20px;
+      text-transform: uppercase;
+      margin: 1rem 0;
+    }
+
+    .physician-specialties {
+      font-size: 18px;
+      line-height: 1.4em;
+    }
+
+    .physician-link {
+      margin: 1rem 0;
+      font-size: 12px;
+      text-transform: uppercase;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+
+  }
+}
+
+.specialties-area {
+  padding: 0 0 5rem;
+
+  @media screen and (min-width: $tablet) {
+    padding: 0 0 10rem;
+  }
+
+  .background-image {
+    position: absolute;
+    z-index: -1;
+    background-image: url('/wp-content/themes/kma-slim/img/paddle-boarder.jpg');
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+
+    @media screen and (min-width: $tablet) {
+      height: 100vh;
+    }
+  }
+
+  .patient-center-actions {
+    position: relative;
+    z-index: 1;
+    background-color: #FFF;
+    background-color: rgba(251, 250, 248, .7);
+    text-align: center;
+
+    @media screen and (max-width: $tablet){
+      padding-top:2rem;
+    }
+
+    .column {
+      min-height: 150px;
+      padding: 0;
+      text-align: center;
+
+      a.portal-button {
+        -webkit-transition: all linear 1s;
+        -moz-transition: all linear 1s;
+        -ms-transition: all linear 1s;
+        -o-transition: all linear 1s;
+        transition: all linear 1s;
+        display: block;
+        height: 100%;
+        padding: 1rem;
+
+        .icon {
+          display: flex;
+          width: 100%;
+          text-align: center;
+          align-items: center;
+          justify-content: center;
+          height: 80px;
+
+          svg {
+            height: 50px;
+            fill: #579ec3;
+          }
+        }
+
+        .button-label {
+          color: $primary;
+          font-size: 14px;
+          padding: 1rem 0;
+        }
+
+      }
+      a.portal-button:hover {
+        background-color: rgba(251, 250, 248, .5);
+
+        .icon {
+
+          svg {
+            fill: $primary;
+          }
+        }
+      }
+    }
+
+    .column:last-child::after,
+    .column::before {
+      content: "";
+      width: 1px;
+      top: 0;
+      display: block;
+      height: 100%;
+      position: absolute;
+      /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,e1e1cc+100 */
+      background: #ffffff; /* Old browsers */
+      background: -moz-linear-gradient(top, #ffffff 0%, #e1e1cc 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #ffffff 0%, #e1e1cc 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to bottom, #ffffff 0%, #e1e1cc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e1e1cc', GradientType=0); /* IE6-9 */
+    }
+    .column:last-child::after {
+      right: -.75em;
+    }
+  }
+
+  .specialties-grid {
+    padding: 0 2em;
+
+    @media screen and (min-width: $fullhd) {
+      width: 1100px;
+    }
+
+    .specialty-button {
+      padding: .5rem;
+      a {
+        color: $primary;
+        display: flex;
+        text-align: center;
+        text-transform: none;
+        font-size: 1.4em !important;
+        line-height: 1em !important;
+        height: 3em;
+        border: none;
+        background-color: rgba(255, 255, 255, .7);
+
+        i.fa {
+          font-size: .6em;
+          line-height: 1.9em;
+          margin-left: .5rem;
+        }
+      }
+      a:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+
+    }
+  }
+
+}
+
+.promotion-area {
+  .actual-size {
+    padding: 2rem 0;
+    background: url("/wp-content/themes/kma-slim/img/actual-size.jpg") center no-repeat #516d9d;
+    background-size: cover;
+    text-align: center;
+
+    @media screen and (min-width: $tablet) {
+      padding: 4rem 0 4rem;
+      text-align: left;
+    }
+
+    .ad-text {
+      width: 100%;
+      padding: 0 .75rem;
+
+      @media screen and (min-width: $tablet) {
+        width: 60%;
+      }
+
+      @media screen and (min-width: $desktop) {
+        width: 710px;
+      }
+
+      .title {
+        padding-bottom: .75rem;
+      }
+
+      .subtitle {
+        font-weight: $weight-bold;
+      }
+
+      p, a {
+        color: $white;
+      }
+
+      a {
+        font-size: .9em;
+        text-decoration: underline;
+        text-transform: uppercase;
+        font-weight: $weight-bold;
+      }
+    }
+
+  }
+}
+
+.home-clinic-news {
+  border-top: 20px solid #89724e;
+  background-color: #f9f8e9;
+  min-height: 520px;
+
+  .article-container {
+    padding: 0 2rem 2rem;
+
+    @media screen and (min-width: $widescreen) {
+      padding: 0 4rem 2rem;
+    }
+    @media screen and (min-width: $fullhd) {
+      padding: 0 6rem 2rem;
+    }
+  }
+}
+
+.clinic-news {
+  border: 1px solid #89724e;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+
+  .article-container {
+    padding: 0 2rem 2rem;
+
+    @media screen and (min-width: $widescreen) {
+      padding: 0 4rem 2rem;
+    }
+    @media screen and (min-width: $fullhd) {
+      padding: 0 6rem 2rem;
+    }
+  }
+
+  .card-image {
+    display: flex;
+    position: relative;
+    max-height: 237px;
+    overflow: hidden;
+    width: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.enews-signup {
+
+  .enewsletter-signup {
+    background-color: #e6e2b7;
+    padding: 3rem 0;
+
+    .form {
+      justify-content: center;
+      padding: 0 2rem;
+
+      .column {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+      }
+
+      input, button {
+        height:50px;
+      }
+    }
+
+    .form-instructions {
+
+      line-height:24px;
+
+      @media screen and (min-width: $tablet) {
+        font-size: 20px;
+      }
+      @media screen and (min-width: $widescreen) {
+        margin: .75rem 0;
+      }
+    }
+  }
+}
+
+.single-physician {
+
+  .large-physician-photo {
+    display: block;
+    -webkit-box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+  }
+  .physician-details {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    h1.title.physician-name {
+      font-weight: 700;
+      font-size: 2.4em;
+      text-transform: uppercase;
+      border-bottom: 2px solid #e6e2b7;
+      width: fit-content;
+      padding-bottom: .25rem;
+
+      @media screen and (min-width: $tablet){
+        font-size: 1.9em;
+      }
+      @media screen and (min-width: $widescreen){
+        font-size: 2.4em;
+      }
+      @media screen and (min-width: $fullhd){
+        font-size: 2.6em;
+      }
+
+    }
+
+    p.specialties-list {
+      min-height: 50%;
+      font-size: 1.3em;
+    }
+
+    a.button.is-primary {
+      width: fit-content;
+      margin-top: 1rem;
+    }
+
+  }
+
+  .physician-video::before {
+    content: "";
+    display: block;
+    padding-top: 63.25%;
+  }
+
+  .physician-video {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+  }
+
+  .physician-bio {
+    margin-top: 2rem;
+  }
+
+  .sidebar-module.physician-list {
+    height:100%;
+
+    li {
+      color: #9996a6;
+    }
+    li a {
+      color: #000;
+    }
+  }
+
+}
+
+.modal {
+
+  .modal-content.large {
+    width: 90vh;
+
+    @media screen and (min-width: $widescreen){
+      width: 1200px;
+    }
+    @media screen and (min-width: $fullhd){
+      width: 1400px;
+    }
+  }
+
+  .video-wrapper::before {
+    content: "";
+    display: block;
+    padding-top: 56.25%;
+  }
+
+  .video-wrapper {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+
+    .embed-content {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+
+      .Viewmedica {
+        width:100% !important;
+      }
+    }
+  }
+}
+
+.sidebar-module {
+  padding:2rem;
+  background-color: #f9f8e9;
+
+  .sidebar-title {
+    color:#000;
+    font-weight: 700;
+    border-bottom: 2px solid #e6e2b7;
+    padding-bottom: .25rem;
+
+  }
+
+  h4 {
+    color: #9996a6;
+    font-weight: 700;
+    font-size:1em;
+    margin-bottom: .5rem;
+    margin-top: 1.5rem;
+  }
+
+  ul.none {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 16px !important;
+    a {
+      text-decoration: none !important;
+    }
+    a:hover {
+      text-decoration: underline !important;
+    }
+  }
+
+}
+
+figure.image.is-16by9 {
+  overflow: hidden;
+
+  img {
+    height: auto;
+    margin: auto;
+  }
+}
+
+.patient-center-buttons {
+  padding: 0 1.5rem 3rem;
+
+  .patient-center-button {
+    background-color: #fcfbfa;
+    -webkit-box-shadow: 0 0 3px rgba(0,0,0,.2);
+    -moz-box-shadow: 0 0 3px rgba(0,0,0,.2);
+    box-shadow: 0 0 3px rgba(0,0,0,.2);
+    display: flex;
+    flex-direction: column;
+    padding: .5rem 0;
+
+    @media screen and (min-width: 768px) {
+      flex-direction: row;
+      height: 178px;
+      padding: 0;
+    }
+
+    .icon {
+      align-self: center;
+      height:100%;
+      width: 25%;
+      padding: .5rem;
+
+      @media screen and (min-width:768px){
+        padding: 2.5rem;
+      }
+
+      svg {
+        width:100%;
+        max-height: 90px;
+        max-width: 100px;
+        path {
+          fill: #b1c78a;
+        }
+
+      }
+    }
+
+    .button-info {
+      padding: .5rem;
+      align-self: center;
+      text-align: center;
+
+      @media screen and (min-width:768px){
+        text-align: left;
+        width: 75%;
+        padding: 0;
+      }
+
+      h2 {
+        font-size:1.4em;
+        font-weight: 700;
+        padding: 0 0 .25rem;
+
+        @media screen and (min-width:768px){
+          font-size:1.8em;
+        }
+      }
+
+      p {
+        padding-right: 1rem;
+        @media screen and (min-width: $tablet) {
+          max-width: 70%;
+        }
+      }
+    }
+
+    .function-button {
+      align-self: center;
+      padding: 1rem;
+
+      @media screen and (min-width:768px){
+        padding:0;
+        align-self: flex-end;
+      }
+
+      a.button {
+        width: 180px;
+
+        @media screen and (min-width:768px){
+          position: absolute;
+          margin-left: -179px;
+          margin-top: -49px;
+        }
+      }
+    }
+
+
+
+
+  }
+}
+
+.appointment-form {
+  margin-top:2rem;
+
+  button.is-primary.is-large {
+    padding: 1rem;
+    height: auto;
+  }
+}
+
+.section-wrapper.map {
+  .location.column {
+    padding: 1rem 1.5rem 3rem;
+    margin:1rem 0;
+
+    h3 {
+      font-size: 24px;
+      font-weight: 700;
+      @media screen and (min-width: $tablet) {
+        font-size: 34px;
+      }
+      @media screen and (min-width: $widescreen) {
+        font-size: 42px;
+      }
+    }
+
+    p {
+      line-height: 2em;
+    }
+
+    .appt-button {
+      margin: 1rem 0;
+
+      a {
+        max-width: 260px;
+        height: auto;
+        white-space: inherit;
+        padding:.75rem 1.25rem;
+      }
+    }
+  }
+}
+
+//glossary
+.page-id-76 {
+  .divider {
+    font-size: 3em;
+    color: #cdde65;
+  }
+  .item {
+    font-weight: 700;
+    margin-top: .75rem;
+  }
+  a.top {
+    font-size: .8em;
+    float: right;
+  }
+}
+
+.full-width-map {
+  .google-map {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 200px;
+    @media screen and (min-width: $tablet) {
+      height: 300px;
+    }
+    @media screen and (min-width: $desktop) {
+      height: 400px;
+    }
+    @media screen and (min-width: $widescreen) {
+      height: 500px;
+    }
+    @media screen and (min-width: $fullhd) {
+      height: 600px;
+    }
+
+    .pop-up {
+      width: 220px;
+
+      p {
+        line-height:1.6em;
+      }
+
+      strong {
+        font-size: 20px;
+        margin-bottom: .75rem;
+      }
+
+      a.button {
+        padding: .5rem 1rem .35em;
+        width: 100%;
+        margin: .75rem 0 .25rem;
+      }
+    }
+  }
+}
+
+//Page is shorter than window height
+footer.stuck {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+//Footer (move for render blocking?)
+#bot {
+  position: relative;
+  z-index: 1;
+  background-color: #333333;
+  padding: 45px 0 0;
+
+  .locations {
+    padding-bottom: 15px;
+
+    .location {
+
+      @media screen and (max-width: $tablet) {
+        text-align: center;
+      }
+
+      @media screen and (min-width: $tablet) and (max-width: $desktop) {
+        padding: .5rem .5rem .5rem 3rem;
+      }
+
+      h3, p {
+        color: #FFF;
+        margin: 0;
+      }
+
+      h3 {
+        font-size: 20px;
+        font-weight: 700;
+        padding: 15px 0;
+      }
+
+      p {
+        font-size: 14px;
+        line-height: 1.6em;
+
+        a {
+          color: #cdde65;
+        }
+      }
+    }
+  }
+
+  .watermark {
+    align-items: flex-end;
+    justify-content: flex-end;
+
+    @media screen and (max-width: $desktop){
+      text-align: center;
+      justify-content: center;
+      margin-top:1rem;
+    }
+
+    .footer-watermark {
+      margin-bottom: -60px;
+    }
+  }
+}
+
+#bot-bot {
+  position: relative;
+  z-index: 1;
+  background-color: #191a1b;
+  padding: 30px 0;
+
+  .is-vertically-aligned {
+    align-items: center;
+  }
+
+  .the-end {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+
+    @media screen and (min-width: $desktop){
+      flex-direction: row;
+      text-align: center;
+    }
+
+    .social {
+      text-align: center;
+
+      svg {
+        width: 40px;
+        margin: .1rem .9rem;
+      }
+    }
+
+    .copyright-section {
+      text-align: center;
+      padding: 1rem;
+
+      @media screen and (min-width: $desktop){
+        text-align: left;
+        padding: 0;
+      }
+
+      .footer-nav {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+
+        .navbar-item {
+          padding: 0 0 0 .25rem;
+          color: #FFF;
+          font-size: 14px;
+
+          a.navbar-item, .navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
+            background-color: transparent;
+            color: #cdde65;
+            padding: 0 .25rem 0 .5em;
+          }
+
+        }
+
+        .navbar-item::before {
+          content: "|"
+        }
+        .navbar-item:first-child::before {
+          content: "";
+        }
+
+      }
+
+      @media screen and (max-width: $desktop) {
+        .footer-menu {
+          display: flex;
+          flex-wrap: wrap;
+          background-color:transparent !important;
+
+          .navbar-item {
+            width: 100%;
+
+            a.navbar-item, .navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
+              padding: 0.5rem;
+              font-size:16px;
+            }
+          }
+          .navbar-item::before {
+            content: ""
+          }
+
+        }
+      }
+
+      .signoff {
+        padding: .25rem .75rem .25rem .75rem;
+
+        @media screen and (min-width: $tablet){
+          padding: .25rem 0 .25rem .75rem;
+        }
+
+        p {
+          color: #FFF;
+          font-size: 14px;
+
+          a {
+            text-decoration: underline;
+            color: #FFF;
+          }
+        }
+      }
+
+      span#siteby {
+        display: block;
+        margin: 1rem;
+        text-align: center;
+
+        @media screen and (min-width: $tablet) {
+          margin: 1rem 0 0;
+        }
+        @media screen and (min-width: $desktop) {
+          display: inline-block;
+          margin: 0 1rem;
+          text-align: left;
+        }
+
+      }
+
+    }
+
+  }
+
+  .non-discriminatory-notice {
+    color: #777;
+    padding:0 1rem;
+    text-align: center;
+
+    @media screen and (min-width: $desktop){
+      text-align: left;
+    }
+
+    a {
+      color: #777;
+      text-decoration: underline;
+    }
+  }
+
+}

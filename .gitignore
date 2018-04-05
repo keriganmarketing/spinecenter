@@ -1,0 +1,8 @@
+.idea/
+.DS_Store
+tags
+*error_log
+*/cache/
+wp-config.php
+wp-content/themes/kma-slim/vendor/
+wp-content/themes/uploads/

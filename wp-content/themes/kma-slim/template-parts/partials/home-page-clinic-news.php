@@ -17,5 +17,5 @@
             ?>
         </div>
     </div>
-    <p class="is-centered"><a href="/news/" class="button is-primary is-outlined" style="margin-bottom: 35px;">Read all news</a></p>
+    <p class="is-centered"><a href="/news/" class="button is-primary is-rounded is-caps" style="margin-bottom: 35px;">Read all news</a></p>
 </div>

@@ -1253,7 +1253,7 @@ body {
 .enews-signup {
 
   .enewsletter-signup {
-    background-color: #e6e2b7;
+    background-color: $secondary;
     padding: 3rem 0;
 
     .form {
@@ -1271,8 +1271,11 @@ body {
     }
 
     .form-instructions {
-
+      color: $white;
       line-height:24px;
+      strong {
+        color: $white;
+      }
 
       @media screen and (min-width: $tablet) {
         font-size: 20px;
@@ -1660,197 +1663,96 @@ footer.stuck {
 #bot {
   position: relative;
   z-index: 1;
-  background-color: #333333;
+  background-color: $primary;
   padding: 45px 0 0;
 
-  .locations {
-    padding-bottom: 15px;
-
-    .location {
-
-      @media screen and (max-width: $tablet) {
-        text-align: center;
-      }
-
-      @media screen and (min-width: $tablet) and (max-width: $desktop) {
-        padding: .5rem .5rem .5rem 3rem;
-      }
-
-      h3, p {
-        color: #FFF;
-        margin: 0;
-      }
-
-      h3 {
-        font-size: 20px;
-        font-weight: 700;
-        padding: 15px 0;
-      }
-
-      p {
-        font-size: 14px;
-        line-height: 1.6em;
-
-        a {
-          color: #cdde65;
-        }
-      }
-    }
+  h3, p, a {
+    color: #FFF;
+    margin: 0;
   }
 
-  .watermark {
-    align-items: flex-end;
-    justify-content: flex-end;
+  h3 {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 15px 0;
+    text-transform: uppercase;
+  }
 
-    @media screen and (max-width: $desktop){
+  p {
+    font-size: 14px;
+    line-height: 1.6em;
+  }
+}
+
+.section-wrapper.locations {
+  padding-bottom: 15px;
+
+  .location {
+
+    @media screen and (max-width: $tablet) {
       text-align: center;
-      justify-content: center;
-      margin-top:1rem;
     }
 
-    .footer-watermark {
-      margin-bottom: -60px;
+    @media screen and (min-width: $tablet) and (max-width: $desktop) {
+      padding: .5rem .5rem .5rem 3rem;
     }
+  }
+}
+
+.section-wrapper.footer-menu {
+
+}
+
+.social {
+  text-align: center;
+
+  svg {
+    width: 40px;
+    margin: .1rem .9rem;
   }
 }
 
 #bot-bot {
   position: relative;
   z-index: 1;
-  background-color: #191a1b;
+  background-color: $primary;
   padding: 30px 0;
 
-  .is-vertically-aligned {
-    align-items: center;
-  }
+  .copyright-section {
+    text-align: center;
+    padding: 1rem;
 
-  .the-end {
-    display: flex;
-    justify-content: flex-start;
-    flex-direction: column;
+    p {
+      color: #FFF;
+      font-size: 14px;
 
-    @media screen and (min-width: $desktop){
-      flex-direction: row;
-      text-align: center;
-    }
-
-    .social {
-      text-align: center;
-
-      svg {
-        width: 40px;
-        margin: .1rem .9rem;
+      a {
+        text-decoration: underline;
+        color: #FFF;
       }
     }
 
-    .copyright-section {
+    span#siteby {
+      display: block;
+      margin: 1rem;
       text-align: center;
-      padding: 1rem;
 
-      @media screen and (min-width: $desktop){
+      @media screen and (min-width: $tablet) {
+        margin: 1rem 0 0;
+      }
+
+      @media screen and (min-width: $desktop) {
+        display: inline-block;
+        margin: 0 1rem;
         text-align: left;
-        padding: 0;
       }
-
-      .footer-nav {
-        display: flex;
-        flex-wrap: wrap;
-        width: 100%;
-
-        .navbar-item {
-          padding: 0 0 0 .25rem;
-          color: #FFF;
-          font-size: 14px;
-
-          a.navbar-item, .navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
-            background-color: transparent;
-            color: #cdde65;
-            padding: 0 .25rem 0 .5em;
-          }
-
-        }
-
-        .navbar-item::before {
-          content: "|"
-        }
-        .navbar-item:first-child::before {
-          content: "";
-        }
-
-      }
-
-      @media screen and (max-width: $desktop) {
-        .footer-menu {
-          display: flex;
-          flex-wrap: wrap;
-          background-color:transparent !important;
-
-          .navbar-item {
-            width: 100%;
-
-            a.navbar-item, .navbar-item:hover, a.navbar-item.is-active, .navbar-link:hover, .navbar-link.is-active {
-              padding: 0.5rem;
-              font-size:16px;
-            }
-          }
-          .navbar-item::before {
-            content: ""
-          }
-
-        }
-      }
-
-      .signoff {
-        padding: .25rem .75rem .25rem .75rem;
-
-        @media screen and (min-width: $tablet){
-          padding: .25rem 0 .25rem .75rem;
-        }
-
-        p {
-          color: #FFF;
-          font-size: 14px;
-
-          a {
-            text-decoration: underline;
-            color: #FFF;
-          }
-        }
-      }
-
-      span#siteby {
-        display: block;
-        margin: 1rem;
-        text-align: center;
-
-        @media screen and (min-width: $tablet) {
-          margin: 1rem 0 0;
-        }
-        @media screen and (min-width: $desktop) {
-          display: inline-block;
-          margin: 0 1rem;
-          text-align: left;
-        }
-
-      }
-
     }
-
   }
 
   .non-discriminatory-notice {
-    color: #777;
+    color: rgba(255,255,255,.75);
     padding:0 1rem;
     text-align: center;
-
-    @media screen and (min-width: $desktop){
-      text-align: left;
-    }
-
-    a {
-      color: #777;
-      text-decoration: underline;
-    }
   }
 
 }

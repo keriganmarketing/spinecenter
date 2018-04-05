@@ -19,7 +19,7 @@ if(isset($_POST['srgaerg534qgq34erg4wq5g45gq45g']) && $_POST['srgaerg534qgq34erg
         <form method="post" class="form columns" name="mailchimp_subscribe" novalidate action="#subscribe">
             <div class="column is-half-desktop">
                 <p class="form-instructions is-centered">
-                    <?= $message != '' ? $message : 'Sign up to receive our quarterly Doctor\'s Orders e-newsletter.'; ?>
+                    <?= $message != '' ? $message : '<strong class="nobreak">WHAT’S NEW AT THE SPINE CENTER:</strong> <span class="nobreak">Sign up for our eNewsletter.</span>'; ?>
                 </p>
             </div>
             <div class="column is-half-desktop">
@@ -29,7 +29,7 @@ if(isset($_POST['srgaerg534qgq34erg4wq5g45gq45g']) && $_POST['srgaerg534qgq34erg
                     </p>
                     <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="srgaerg534qgq34erg4wq5g45gq45g" tabindex="-1" value=""></div>
                     <p class="control">
-                        <button type="submit" class="button is-primary is-outlined">
+                        <button type="submit" class="button is-white is-outlined is-rounded is-caps">
                             sign up
                         </button>
                     </p>

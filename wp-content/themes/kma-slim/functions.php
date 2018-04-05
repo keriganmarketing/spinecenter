@@ -94,7 +94,7 @@ add_action('after_setup_theme', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('scripts', get_template_directory_uri() . '/app.js', [], '0.0.1', true);
+    wp_enqueue_script('scripts', get_template_directory_uri() . '/app.js', [], null, true);
 });
 
 function getPageChildren($pageName, $postChildren = '')

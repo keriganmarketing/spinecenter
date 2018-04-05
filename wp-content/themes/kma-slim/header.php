@@ -33,3 +33,10 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5X2845W"
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
+<a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'kmaslim'); ?></a>
+<div id="app">
+    <div class="site-wrapper" :class="{
+        'menu-open': isOpen,
+        'full-height': footerStuck,
+        'scrolling': isScrolling }
+    ">

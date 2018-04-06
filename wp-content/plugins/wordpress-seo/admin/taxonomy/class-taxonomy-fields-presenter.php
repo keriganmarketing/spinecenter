@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin
  */
 
@@ -94,6 +96,10 @@ class WPSEO_Taxonomy_Fields_Presenter {
 				$field .= '<div id="wpseosnippet" class="wpseosnippet"></div>';
 				break;
 			case 'pageanalysis':
+				if ( WPSEO_Options::get( 'content_analysis_active', true ) === false && WPSEO_Options::get( 'keyword_analysis_active', true ) === false ) {
+					break;
+				}
+
 				$field .= '<div id="pageanalysis">';
 				$field .= '<section class="yoast-section" id="wpseo-pageanalysis-section">';
 				$field .= '<h3 class="yoast-section__heading yoast-section__heading-icon yoast-section__heading-icon-list">' . __( 'Analysis', 'wordpress-seo' ) . '</h3>';

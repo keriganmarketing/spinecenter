@@ -1,3 +1,5 @@
+require("babel-polyfill");
+
 window.Vue = require('vue');
 
 const flatpickr = require("flatpickr");
@@ -20,7 +22,7 @@ window.Vue.use(VueParallaxJs, {
     minWidth: 1000,
 });
 
-var app = new Vue({
+let app = new Vue({
 
     el: '#app',
 
@@ -49,7 +51,7 @@ var app = new Vue({
         clientHeight: 0,
         windowHeight: 0,
         windowWidth: 0,
-        menuItems: [],
+        menuItems: {},
         slickOptions: {
             arrows: true,
             autoplay: true,
@@ -91,9 +93,6 @@ var app = new Vue({
     },
 
     mounted: function() {
-
-        this.$el.style.display = 'flex';
-
         this.footerStuck = window.innerHeight > this.$root.$el.clientHeight;
         this.clientHeight = this.$root.$el.clientHeight;
         this.windowHeight = window.innerHeight;
@@ -107,12 +106,14 @@ var app = new Vue({
         }
 
         this.handleScroll();
-        this.menuItems = this.$el.querySelectorAll('#MobileNavMenu .navbar-item');
-        this.handleMobileSubMenu();
-
+        if(this.isOpen) {
+            this.menuItems = this.$el.querySelectorAll('#MobileNavMenu .navbar-item');
+            this.handleMobileSubMenu();
+        }
     },
 
     created: function () {
+        this.isLoaded = true;
         window.addEventListener('scroll', this.handleScroll);
     },
 

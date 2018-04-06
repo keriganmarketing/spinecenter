@@ -46,7 +46,7 @@ include(locate_template('template-parts/partials/top.php'));
                         <?php } ?>
                     </div>
                 </div>
-            </section>
+            </section><!--#content-->
         </article>
-    </div>
+    </div><!--#mid-->
 <?php include(locate_template('template-parts/partials/bot.php')); ?>

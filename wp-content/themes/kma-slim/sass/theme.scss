@@ -508,8 +508,13 @@ body {
   }
 }
 
+<<<<<<< HEAD
 
 #bot, .home {
+=======
+#bot,
+.home {
+>>>>>>> upstream/master
   h2 {
     font-weight: 200;
     margin: 4rem 2rem;
@@ -567,11 +572,7 @@ body {
   background-color: #FFF;
 
   section.header.section {
-    background: #eee7cc;
-    background: -moz-linear-gradient(45deg, #eee7cc 0%, #ffffff 100%);
-    background: -webkit-linear-gradient(45deg, #eee7cc 0%,#ffffff 100%);
-    background: linear-gradient(45deg, #eee7cc 0%,#ffffff 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eee7cc', endColorstr='#ffffff',GradientType=1 );
+    background-color: #f5f4ee;
     padding: 4rem 1.5rem;
     background-size: cover;
 
@@ -628,7 +629,7 @@ body {
     }
 
     h1 {
-       color: #7fa53f;
+       color: $primary;
        font-weight: 200;
        font-size: 1.6em;
 

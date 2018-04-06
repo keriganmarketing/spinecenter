@@ -254,7 +254,7 @@
                     "email": "daron.adkins@gmail.com"
                 }
             ],
-            "time": "2018-03-23 16:54:28"
+            "time": "2018-03-23T16:54:28+00:00"
         },
         {
             "name": "nesbot/carbon",

@@ -1174,15 +1174,28 @@ body {
       }
 
       @media screen and (min-width: $desktop) {
-        width: 710px;
+        width: 870px;
       }
 
       .title {
-        padding-bottom: .75rem;
+        font-size: 2em;
+        font-weight: $weight-light;
+        padding-bottom: 1rem;
+
+        @media screen and (min-width: $tablet) {
+          font-size: 3em;
+        }
+
+        @media screen and (min-width: $desktop) {
+          font-size: 4em;
+        }
       }
 
       .subtitle {
-        font-weight: $weight-bold;
+        font-weight: $weight-semibold;
+        @media screen and (min-width: $desktop) {
+          width: 680px;
+        }
       }
 
       p, a {
@@ -1200,25 +1213,7 @@ body {
   }
 }
 
-.home-clinic-news {
-  border-top: 20px solid #89724e;
-  background-color: #f9f8e9;
-  min-height: 520px;
-
-  .article-container {
-    padding: 0 2rem 2rem;
-
-    @media screen and (min-width: $widescreen) {
-      padding: 0 4rem 2rem;
-    }
-    @media screen and (min-width: $fullhd) {
-      padding: 0 6rem 2rem;
-    }
-  }
-}
-
 .clinic-news {
-  border: 1px solid #89724e;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -1235,16 +1230,43 @@ body {
     }
   }
 
-  .card-image {
-    display: flex;
-    position: relative;
-    max-height: 237px;
-    overflow: hidden;
-    width: auto;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
+ .social-module {
+   height: 425px;
+
+   .card-image {
+     height: 50%;
+     overflow: hidden;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     border-bottom: 1px solid #ccc;
+
+     img {
+       max-height: 100%;
+       max-width: 100%;
+       width: auto;
+       height: auto;
+     }
+   }
+   .card-content {
+     padding: 1.5rem;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     height: 50%;
+
+     p {
+       font-size: 13px;
+       margin-bottom: 1rem;
+     }
+
+     a.facebook.cta-link {
+       font-size: 13px;
+       text-decoration: underline;
+       color: #2d2d2d;
+     }
+   }
+ }
 }
 
 .enews-signup {
@@ -1327,7 +1349,6 @@ body {
       width: fit-content;
       margin-top: 1rem;
     }
-
   }
 
   .physician-video::before {
@@ -1368,7 +1389,6 @@ body {
       color: #000;
     }
   }
-
 }
 
 .modal {
@@ -1445,7 +1465,6 @@ body {
       text-decoration: underline !important;
     }
   }
-
 }
 
 figure.image.is-16by9 {
@@ -1544,10 +1563,6 @@ figure.image.is-16by9 {
         }
       }
     }
-
-
-
-
   }
 }
 
@@ -1660,24 +1675,63 @@ footer.stuck {
 #bot {
   position: relative;
   z-index: 1;
-  background-color: $primary;
+  background-color: $dark;
   padding: 45px 0 0;
 
-  h3, p, a {
-    color: #FFF;
+  h3, p {
+    color: rgba(255,255,255,.5);
     margin: 0;
   }
 
   h3 {
     font-size: 20px;
     font-weight: 700;
-    padding: 15px 0;
     text-transform: uppercase;
   }
 
   p {
-    font-size: 14px;
     line-height: 1.6em;
+  }
+}
+
+.section-wrapper.footer-menu {
+  .container {
+    max-width: 100% !important;
+    width: 1200px !important;
+  }
+
+  .footer-title-link {
+    color: #FFF;
+  }
+
+  li {
+    padding-bottom: .5rem;
+
+    .footer-link {
+       color: #9fcedb;
+       font-size: 15px;
+    }
+  }
+
+  .page-list-title {
+    padding: 5px 0;
+  }
+
+  .page-list-title,
+  .page-list {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align:center;
+  }
+
+  @media screen and (min-width:$tablet){
+    .page-list-title,
+    .page-list {
+      padding-left: 0;
+      padding-right: 0;
+      text-align:left;
+    }
+
   }
 }
 
@@ -1685,19 +1739,57 @@ footer.stuck {
   padding-bottom: 15px;
 
   .location {
+    padding: .5rem 2rem;
 
     @media screen and (max-width: $tablet) {
       text-align: center;
     }
 
-    @media screen and (min-width: $tablet) and (max-width: $desktop) {
-      padding: .5rem .5rem .5rem 3rem;
+    @media screen and (min-width: $tablet) {
+      padding: 1.5rem 2rem .5rem;
     }
   }
 }
 
-.section-wrapper.footer-menu {
+.section-wrapper.footer-logo {
+  span.line {
+    margin-top: 47px;
+    border-bottom-color: #FFF !important;
+  }
 
+  img.bot-footer-watermark {
+    margin: 0 1rem;
+    max-width: 234px;
+  }
+}
+
+.section-wrapper.footer-contact {
+
+  padding: 1rem 0 2rem;
+
+  .is-large {
+    font-size: 23px;
+  }
+
+  .is-bold {
+      font-weight: $weight-bold;
+      color: #FFF;
+  }
+
+  .footer-tel-link-large {
+    color: #FFF;
+  }
+
+  .footer-tel-link {
+    color: #FFF;
+  }
+
+  .footer-email-link {
+    margin-top: 1rem !important;
+    a {
+      color: #9fcedb;
+    }
+  }
 }
 
 .social {
@@ -1706,22 +1798,26 @@ footer.stuck {
   svg {
     width: 40px;
     margin: .1rem .9rem;
+    padding-bottom: .9rem;
   }
 }
 
 #bot-bot {
   position: relative;
   z-index: 1;
-  background-color: $primary;
+  background-color: $dark;
   padding: 30px 0;
+
 
   .copyright-section {
     text-align: center;
     padding: 1rem;
+    //color: #FFF;
 
     p {
       color: #FFF;
-      font-size: 14px;
+      font-size: 12px;
+      margin-bottom: 1rem;
 
       a {
         text-decoration: underline;
@@ -1746,10 +1842,16 @@ footer.stuck {
     }
   }
 
-  .non-discriminatory-notice {
-    color: rgba(255,255,255,.75);
+  .help.non-discriminatory-notice {
+    font-size: 12px;
+    color: rgba(255,255,255,.5);
     padding:0 1rem;
     text-align: center;
+
+    a {
+      color: rgba(255,255,255,.5);
+    }
   }
 
 }
+

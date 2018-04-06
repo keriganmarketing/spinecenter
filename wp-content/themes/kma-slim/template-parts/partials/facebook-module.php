@@ -8,11 +8,12 @@ foreach ($feed->posts as $fbPost) {
 
     $isVideo  = ($fbPost->type == 'video');
     $hasImage = ($fbPost->full_picture != '' && $isVideo == false);
-    $date     = date('M j',strtotime($fbPost->created_time)) . ' at ' . date('g:i a',strtotime($fbPost->created_time));
+    //$date     = date('M j',strtotime($fbPost->created_time)) . ' at ' . date('g:i a',strtotime($fbPost->created_time));
+    $date     = date('M j, Y',strtotime($fbPost->created_time));
 
     ?>
 
-    <div class="column is-4">
+    <div class="column is-6-tablet is-4-desktop">
         <div class="card social-module facebook has-text-centered <?= ($hasImage == true ? 'has-image' : 'no-image'); ?>">
             <?php if ($hasImage == true) { ?>
                 <div class="card-image">
@@ -33,12 +34,10 @@ foreach ($feed->posts as $fbPost) {
                     </iframe>
                 </div>
             <?php } ?>
-            <div class="card-content">
+            <div class="card-content has-text-centered">
+                <p class="posted-on is-bold">Posted <?= $date; ?></p>
                 <p class="post-text"><?= $fbPost->message; ?></p>
-                <p class="posted-on">Posted on <?= $date; ?></p>
-            </div>
-            <div class="card-bottom">
-                <a class="button is-primary is-large is-rounded has-shadow" target="_blank" href="<?= $fbPost->permalink_url; ?>">Read more on Facebook</a>
+                <a class="facebook cta-link is-bold is-caps" target="_blank" href="<?= $fbPost->permalink_url; ?>">Read more on Facebook</a>
             </div>
         </div>
     </div>

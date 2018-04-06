@@ -15,6 +15,7 @@ import Slick from 'vue-slick';
 import VueParallaxJs from 'vue-parallax-js';
 import FlatPickr from './components/FlatPickr.vue';
 
+
 window.Vue.use(VueParallaxJs, {
     minWidth: 1000,
 });

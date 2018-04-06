@@ -94,5 +94,37 @@ add_action('after_setup_theme', function () {
 });
 
 add_action('wp_enqueue_scripts', function () {
-    wp_enqueue_script('scripts', get_template_directory_uri() . '/app.js', [], '0.0.1', true);
+    wp_enqueue_script('scripts', get_template_directory_uri() . '/app.js', [], null, true);
 });
+
+function getPageChildren($pageName, $postChildren = '')
+{
+    $parent   = get_page_by_title($pageName);
+    if($postChildren == '') {
+        $children = get_pages([
+            'parent'      => $parent->ID,
+            'orderby'     => 'menu_order',
+            'order'       => 'ASC',
+            'post_status' => 'publish'
+        ]);
+    }else{
+        $children = get_posts([
+            'post_type'      => 'physician',
+            'posts_per_page' => -1,
+            'orderby'        => 'menu_order',
+            'order'          => 'ASC',
+            'offset'         => 0,
+            'post_status'    => 'publish'
+        ]);
+    }
+
+    echo '<h3 class="page-list-title ' . $parent->post_name . '"><a class="footer-title-link" href="'. get_permalink($parent->ID) . '" >' . $parent->post_title . '</a></h3>';
+    echo '<ul class="page-list ' . $parent->post_name . '">';
+    foreach($children as $child ) {
+        //echo '<pre>',print_r($child),'</pre>';
+        echo '<li>' . '<a class="footer-link ' . $child->post_name . '" href="' . get_permalink($child->ID) . '" >' . $child->post_title . '</a>' . '</li>';
+    }
+    echo '</ul>';
+
+    //return $children;
+}

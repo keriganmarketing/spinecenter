@@ -90,7 +90,7 @@ include(locate_template('template-parts/partials/top.php'));
                         </div>
                     <?php } ?>
                 </slick>
-                <a href="/our-team/" class="button is-primary is-rounded">Meet Our Team</a>
+                <a href="/our-team/" class="button is-primary is-rounded is-caps">Meet Our Team</a>
             </div>
         </div>
 

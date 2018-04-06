@@ -38,7 +38,7 @@
                 </div>
             </div>
             <div class="column is-6">
-                <button class="button is-primary is-rounded is-block has-shadow">Continue with request</button>
+                <button class="button is-primary is-rounded is-block has-shadow is-caps">Continue with request</button>
             </div>
         </div>
     </form>

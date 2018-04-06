@@ -1,8 +1,17 @@
+.nobreak {
+  white-space: nowrap;
+}
+
 .is-justified {
   justify-content: center;
 }
 .is-justified-end {
   justify-content: flex-end;
+}
+.is-caps {
+  text-transform: uppercase;
+  font-weight: $weight-bold;
+  font-size: .9em;
 }
 
 .is-rounded {

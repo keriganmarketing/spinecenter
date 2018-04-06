@@ -10,11 +10,20 @@
 }
 .is-caps {
   text-transform: uppercase;
-  font-weight: $weight-bold;
   font-size: .9em;
+}
+
+.is-medium {
+  font-weight: $weight-medium;
+}
+.is-semibold {
+  font-weight: $weight-semibold;
 }
 .is-bold {
   font-weight: $weight-bold;
+}
+.is-black {
+  font-weight: $weight-black;
 }
 
 .is-rounded {
@@ -187,6 +196,9 @@
 }
 .title.is-white {
   color: $white;
+}
+.title.is-secondary {
+  color: $secondary;
 }
 span.is-info {
   color: $info;

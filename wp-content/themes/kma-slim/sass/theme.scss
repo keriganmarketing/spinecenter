@@ -330,7 +330,7 @@ body {
       text-align: left;
       padding: 1.95rem 1.5rem .5rem;
       color: #FFF;
-      font-weight: normal;
+      font-weight: $weight-normal;
 
       @media screen and (min-width: $desktop) {
         padding: 1.95rem 1.75rem .5rem .75rem;
@@ -347,7 +347,7 @@ body {
         color: #FFF;
         text-transform: uppercase;
         font-size: .8em;
-        font-weight: $weight-bold;
+        font-weight: $weight-semibold;
 
         @media screen and (min-width: $desktop) {
           span {
@@ -716,6 +716,11 @@ body {
     box-shadow: 0 0 30px rgba(0,0,0,.3);
     width: 100%;
 
+    @media screen and (min-width: $tablet) {
+      width: 550px;
+      margin: auto;
+    }
+
     @media screen and (min-width: $desktop) {
       padding: 2rem;
       margin: 5rem 0 0;
@@ -733,16 +738,24 @@ body {
       margin: 5rem 3rem 0;
       width: 650px;
     }
+
+    p.title {
+      margin-bottom: .5rem;
+    }
+
+    form {
+      margin-top: .5rem;
+    }
   }
 }
 
 .home-page-text {
   background-color: #FFF;
-  padding: 5rem 0;
   text-align: left;
+  padding: 3rem 2rem;
 
-  @media screen and (max-width: $tablet) {
-    padding: 3rem 2rem;
+  @media screen and (min-width: 1534px) {
+    padding: 3rem 0;
   }
 
   h1.title {
@@ -750,18 +763,17 @@ body {
     font-weight: $weight-light;
     margin-bottom: 2rem;
     text-align: left;
-    font-size: 1.7em;
-
-    @media screen and (min-width: 370px) {
-      font-size: 2.1em;
-    }
-    @media screen and (min-width: 400px) {
-      font-size: 2.4em;
-    }
+    font-size: 27px;
     @media screen and (min-width: $tablet) {
-      font-size: 40px;
+      font-size: 55px;
     }
     @media screen and (min-width: $desktop) {
+      font-size: 34px;
+    }
+    @media screen and (min-width: $widescreen) {
+      font-size: 41px;
+    }
+    @media screen and (min-width: $widescreen) {
       font-size: 53px;
     }
   }
@@ -791,10 +803,24 @@ body {
   }
 
   .review-module {
-    padding: 4rem;
+    padding: 0 0 2rem;
+    @media screen and (min-width: $desktop) {
+      padding: 2rem 0 2rem 3.5rem;
+    }
+    @media screen and (min-width: $widescreen) {
+      padding: 2rem 0 2rem 4rem;
+    }
 
-    h3 {
-      font-weight: $weight-semibold;
+    h3.is-1 {
+      font-weight: $weight-medium;
+      font-size: 26px;
+      padding-top: 4rem;
+      @media screen and (min-width: $tablet) {
+        font-size: 30px;
+      }
+      @media screen and (min-width: $desktop) {
+        font-size: 42px;
+      }
     }
 
     .open-quote {
@@ -803,21 +829,25 @@ body {
       font-weight: bold !important;
       position: relative;
       display: inline-block;
-      margin-bottom: -41px;
       line-height: .1em;
-      vertical-align: middle;
+      vertical-align: text-bottom;
     }
 
     .review-text {
-      padding-left: 4.5rem;
-      font-weight: $weight-semibold;
+      font-weight: $weight-medium;
       font-style: italic;
+      @media screen and (min-width: $tablet) {
+        padding-left: 4rem;
+      }
     }
 
     .review-author {
-      padding: .75rem 0 .75rem 4.5rem;
       font-weight: $weight-bold;
       font-style: italic;
+      padding: .75rem 0 .75rem 0;
+      @media screen and (min-width: $tablet) {
+        padding: .75rem 0 .75rem 4rem;
+      }
     }
 
     .more-reviews-link {
@@ -826,7 +856,10 @@ body {
       text-transform: uppercase;
       color: $black;
       text-decoration: underline;
-      margin: .75rem 0 0 4.5rem;
+      margin: .75rem 0 0 0;
+      @media screen and (min-width: $tablet) {
+        margin: .75rem 0 0 4rem;
+      }
     }
 
   }
@@ -846,13 +879,14 @@ body {
   padding-bottom: 4rem;
 
   .title {
-    font-weight: $weight-semibold;
+    font-weight: $weight-medium;
   }
 
   .subtitle {
-    margin-top: -3.5rem;
+    margin-top: -3rem !important;
+    margin-bottom: 3rem !important;
     color: $white;
-    font-weight: $weight-semibold;
+    font-weight: $weight-medium;
   }
 
   .columns {
@@ -891,7 +925,7 @@ body {
     }
 
     .bubble-icon {
-      border: 1px solid $primary;
+      border: 1px solid #9fcedb;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       border-radius: 50%;
@@ -904,7 +938,7 @@ body {
 
       i.fa {
         font-size: 1.3em;
-        color: $primary;
+        color: #9fcedb;
       }
 
     }
@@ -959,7 +993,7 @@ body {
         a {
           text-decoration: underline;
           color: $black;
-          font-weight: $weight-semibold;
+          font-weight: $weight-medium;
         }
       }
 
@@ -1192,7 +1226,7 @@ body {
       }
 
       .subtitle {
-        font-weight: $weight-semibold;
+        font-weight: $weight-medium;
         @media screen and (min-width: $desktop) {
           width: 680px;
         }
@@ -1206,7 +1240,7 @@ body {
         font-size: .9em;
         text-decoration: underline;
         text-transform: uppercase;
-        font-weight: $weight-bold;
+        font-weight: $weight-semibold;
       }
     }
 
@@ -1777,7 +1811,7 @@ footer.stuck {
   }
 
   .is-bold {
-      font-weight: $weight-bold;
+      font-weight: $weight-semibold;
       color: #FFF;
   }
 

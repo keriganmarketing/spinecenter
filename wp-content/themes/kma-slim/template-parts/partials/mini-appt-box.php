@@ -1,5 +1,5 @@
 <div class="appointment-box-container has-text-centered">
-    <p class="title is-3">Put back pain behind you.</p>
+    <p class="title is-3 is-bold is-primary">Put back pain behind you.</p>
     <p>When you’re pain free, everything gets better.</p>
     <p>Start by requesting an appointment at The Spine Center:</p>
     <form>

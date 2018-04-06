@@ -56,7 +56,7 @@ include(locate_template('template-parts/partials/top.php'));
                                     $videos = $videoModule->getVideos([], $physician['slug']);
 
                                     foreach($videos as $video){ ?>
-                                        <div class="column is-6-tablet is-4-desktop">
+                                        <div class="column is-6-tablet is-4-widescreen">
                                             <a @click="$emit('toggleModal', 'youtube', '<?php echo $video['video_code']; ?>')" >
                                                 <figure class="image is-16by9">
                                                     <img src="https://i.ytimg.com/vi/<?php echo $video['video_code']; ?>/0.jpg" alt="<?php echo $video['name']; ?>">
@@ -96,7 +96,9 @@ include(locate_template('template-parts/partials/top.php'));
                                     //echo '<pre>',print_r($articles),'</pre>';
 
                                     foreach($articles as $post){ ?>
+                                        <div class="column is-6-tablet is-4-widescreen">
                                         <?php get_template_part('template-parts/partials/mini-article', get_post_format()); ?>
+                                        </div>
                                     <?php } ?>
                                     <hr>
                                 </div>

@@ -22,11 +22,13 @@ include(locate_template('template-parts/partials/top.php'));
             <?php include(locate_template('template-parts/partials/breadcrumbs.php')); ?>
             <section id="content" class="content section news">
                 <div class="container">
+                    <h1><?php echo($subhead != '' ? '<span class="subtitle">' . $subhead . '</span>' : null); ?></h1>
                     <div class="columns is-multiline">
-                        <h1><?php echo($subhead != '' ? '<span class="subtitle">' . $subhead . '</span>' : null); ?></h1>
+                        <div class="column is-6-tablet is-4-desktop is-3-widescreen">
                         <?php
                             get_template_part('template-parts/partials/mini-article', get_post_format());
                         ?>
+                        </div>
                     </div>
                 </div>
             </section>

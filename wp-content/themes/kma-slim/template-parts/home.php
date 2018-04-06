@@ -53,7 +53,7 @@ include(locate_template('template-parts/partials/top.php'));
 
         <div class="section-wrapper home-page-text">
             <div class="container semi-fluid">
-                <div class="columns is-multiline">
+                <div class="columns is-multiline is-aligned">
                     <div class="column is-12-tablet is-6-desktop">
                         <div class="content">
                             <h1 class="title"><?php echo $headline; ?></h1>

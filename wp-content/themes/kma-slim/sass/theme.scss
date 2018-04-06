@@ -508,13 +508,8 @@ body {
   }
 }
 
-<<<<<<< HEAD
-
-#bot, .home {
-=======
 #bot,
 .home {
->>>>>>> upstream/master
   h2 {
     font-weight: 200;
     margin: 4rem 2rem;
@@ -1332,7 +1327,6 @@ body {
       width: fit-content;
       margin-top: 1rem;
     }
-
   }
 
   .physician-video::before {
@@ -1373,7 +1367,6 @@ body {
       color: #000;
     }
   }
-
 }
 
 .modal {
@@ -1450,7 +1443,6 @@ body {
       text-decoration: underline !important;
     }
   }
-
 }
 
 figure.image.is-16by9 {
@@ -1549,10 +1541,6 @@ figure.image.is-16by9 {
         }
       }
     }
-
-
-
-
   }
 }
 
@@ -1669,14 +1657,14 @@ footer.stuck {
   padding: 45px 0 0;
 
   h3, p {
-    color: #FFF;
+    color: rgba(255,255,255,.5);
     margin: 0;
   }
 
   h3 {
     font-size: 20px;
     font-weight: 700;
-    padding: 15px 0;
+    padding: 5px 0;
     text-transform: uppercase;
   }
 
@@ -1697,7 +1685,7 @@ footer.stuck {
     .footer-link {
        color: rgba(255,255,255,.5);
     }     
-  }    
+  }  
 }
 
 .section-wrapper.locations {
@@ -1724,7 +1712,19 @@ footer.stuck {
   .is-bold {
       font-weight: $weight-bold;
       color: #FFF;
-  }  
+  }
+  
+  .footer-tel-link-large {
+    color: #FFF;
+  }
+
+  .footer-tel-link {
+    color: #FFF;
+  }
+
+  .footer-email-link {
+    color: rgba(255,255,255,.5);
+  }
 }
 
 .social {
@@ -1733,6 +1733,7 @@ footer.stuck {
   svg {
     width: 40px;
     margin: .1rem .9rem;
+    padding-bottom: .9rem;
   }
 }
 
@@ -1742,9 +1743,12 @@ footer.stuck {
   background-color: $dark;
   padding: 30px 0;
 
+
   .copyright-section {
     text-align: center;
     padding: 1rem;
+    //font-size: 14px;
+    //color: #FFF;
 
     p {
       color: #FFF;
@@ -1754,7 +1758,7 @@ footer.stuck {
         text-decoration: underline;
         color: #FFF;
       }
-    }
+    }    
 
     span#siteby {
       display: block;
@@ -1773,10 +1777,16 @@ footer.stuck {
     }
   }
 
-  .non-discriminatory-notice {
-    color: rgba(255,255,255,.75);
+  .help.non-discriminatory-notice {
+    font-size: 14px;
+    color: rgba(255,255,255,.5);
     padding:0 1rem;
     text-align: center;
+
+    a {
+      color: rgba(255,255,255,.5);
+    }
   }
 
 }
+

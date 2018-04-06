@@ -4,20 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "074609b1088e2fe8f59ef35ed0578224",
+    "content-hash": "34500be9f34ad629b1ecd3adc65288dd",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
-            "version": "6.3.0",
+            "version": "6.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/guzzle.git",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699"
+                "reference": "68d0ea14d5a3f42a20e87632a5f84931e2709c90"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/f4db5a78a5ea468d4831de7f0bf9d9415e348699",
-                "reference": "f4db5a78a5ea468d4831de7f0bf9d9415e348699",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/68d0ea14d5a3f42a20e87632a5f84931e2709c90",
+                "reference": "68d0ea14d5a3f42a20e87632a5f84931e2709c90",
                 "shasum": ""
             },
             "require": {
@@ -27,7 +27,7 @@
             },
             "require-dev": {
                 "ext-curl": "*",
-                "phpunit/phpunit": "^4.0 || ^5.0",
+                "phpunit/phpunit": "^4.8.35 || ^5.7 || ^6.4",
                 "psr/log": "^1.0"
             },
             "suggest": {
@@ -36,7 +36,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "6.2-dev"
+                    "dev-master": "6.3-dev"
                 }
             },
             "autoload": {
@@ -69,7 +69,7 @@
                 "rest",
                 "web service"
             ],
-            "time": "2017-06-22T18:50:49+00:00"
+            "time": "2018-03-26T16:33:04+00:00"
         },
         {
             "name": "guzzlehttp/promises",
@@ -219,41 +219,6 @@
             ],
             "description": "Adds additional custom post type functionality for our WordPress sites",
             "time": "2017-11-30T22:00:55+00:00"
-        },
-        {
-            "name": "kerigansolutions/facebookfeed",
-            "version": "0.13.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kerigansolutions/facebookfeed.git",
-                "reference": "7171b0069a9904bae4b9d02732673614b8458683"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kerigansolutions/facebookfeed/zipball/7171b0069a9904bae4b9d02732673614b8458683",
-                "reference": "7171b0069a9904bae4b9d02732673614b8458683",
-                "shasum": ""
-            },
-            "require": {
-                "guzzlehttp/guzzle": "^6.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "KeriganSolutions\\FacebookFeed\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Daron Adkins",
-                    "email": "daron.adkins@gmail.com"
-                }
-            ],
-            "time": "2017-12-01T15:54:48+00:00"
         },
         {
             "name": "kerigansolutions/fb-autoblog-wp",

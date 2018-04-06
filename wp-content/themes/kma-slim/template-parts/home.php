@@ -16,6 +16,7 @@ include(locate_template('template-parts/partials/top.php'));
 ?>
 <div id="mid">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
         <div class="container">
             <div class="appointment-box columns is-justified-end is-gapless">
                 <div class="column is-narrow" >
@@ -25,7 +26,6 @@ include(locate_template('template-parts/partials/top.php'));
         </div>
 
         <div class="section-wrapper home-slider">
-
             <slider>
                 <?php
                 $slider = new BulmaSlider();
@@ -49,11 +49,9 @@ include(locate_template('template-parts/partials/top.php'));
 
                 ?>
             </slider>
-
         </div>
 
         <div class="section-wrapper home-page-text">
-
             <div class="container semi-fluid">
                 <div class="columns is-multiline">
                     <div class="column is-12-tablet is-6-desktop">
@@ -68,15 +66,11 @@ include(locate_template('template-parts/partials/top.php'));
                         <?php include(locate_template('template-parts/partials/review-module.php')); ?>
                     </div>
                 </div>
-
             </div>
-
         </div>
 
         <div class="section-wrapper home-video-area">
-
             <?php include(locate_template('template-parts/partials/home-video-gallery.php')); ?>
-
         </div>
 
         <div class="section-wrapper doctor-carousel is-centered">
@@ -95,21 +89,15 @@ include(locate_template('template-parts/partials/top.php'));
         </div>
 
         <div class="section-wrapper specialties-area">
-
             <?php include(locate_template('template-parts/partials/home-page-specialties.php')); ?>
-
         </div>
 
         <div class="section-wrapper promotion-area">
-
             <?php include(locate_template('template-parts/partials/promotion-strip.php')); ?>
-
         </div>
 
         <div class="section-wrapper clinic-news">
-
             <?php include(locate_template('template-parts/partials/home-page-clinic-news.php')); ?>
-
         </div>
 
     </article><!-- #post-## -->

@@ -6,7 +6,7 @@
  * @version 1.2
  */
 ?><!DOCTYPE html>
-<html <?php language_attributes(); ?> class="no-js no-svg">
+<html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -19,13 +19,6 @@
         })(window,document,'script','dataLayer','GTM-5X2845W');</script>
     <!-- End Google Tag Manager -->
 	<?php wp_head(); ?>
-    <style>
-        @media screen and (min-width: 1024px){
-            #app {
-                display: none;
-            }
-        }
-    </style>
 </head>
 
 <body <?php body_class(); ?> >
@@ -34,9 +27,5 @@
                   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 <a class="skip-link screen-reader-text" href="#content"><?php _e('Skip to content', 'kmaslim'); ?></a>
-<div id="app">
-    <div class="site-wrapper" :class="{
-        'menu-open': isOpen,
-        'full-height': footerStuck,
-        'scrolling': isScrolling }
-    ">
+<div id="app" :class="['app', {'modal-open': modalOpen }]" v-if="isLoaded">
+    <div :class="['site-wrapper', { 'menu-open': isOpen }, {'full-height': footerStuck }, {'scrolling': isScrolling }]">

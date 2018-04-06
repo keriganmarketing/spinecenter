@@ -28,6 +28,8 @@ if (have_posts()) :
 else :
     if (is_tax()) {
         get_template_part('template-parts/taxonomy', get_query_var('taxonomy'));
+    }elseif(is_search()){
+        get_template_part('template-parts/blog', get_post_format());
     } else {
         get_template_part('template-parts/content', 'none');
     }

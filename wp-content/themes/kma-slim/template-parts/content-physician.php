@@ -31,22 +31,25 @@ include(locate_template('template-parts/partials/top.php'));
 
             <section id="content" class="section">
                 <div class="container">
-                        <div class="columns is-multiline">
-                            <div class="column is-4-tablet is-3-widescreen">
+                        <div class="columns is-multiline is-variable is-8">
+                            <div class="column is-4-tablet is-3-widescreen has-text-centered">
                                 <img class="large-physician-photo" src="<?php echo $physician['photo']; ?>" >
-                                <a class="button is-primary" href="/patient-center/appointments/?requested_physician=<?php echo $physician['slug']; ?>" >Request an appointment</a>
+                                <a class="button is-primary is-rounded has-shadow is-bold is-caps" href="/patient-center/appointments/?requested_physician=<?php echo $physician['slug']; ?>" >Request an appointment</a>
                             </div>
                             <div class="column is-8-tablet is-9-widescreen">
                                 <div class="entry-content content">
-                                    <?php //echo '<pre>',print_r($physician),'</pre>'; ?>
                                     <?php the_content(); ?>
                                 </div>
+                            </div>
+                            <div class="column is-12">
                                 <hr>
                             </div>
-                            <div class="column is-12-tablet is-8-desktop is-9-fullhd is-fourth-desktop">
-                                <h2 class="title is-primary">Recent Spine Videos</h2>
-                                <p class="subtitle">by <?php echo $physician['name']; ?></p>
-                                <div class="columns is-multiline">
+                            <div class="column is-12-tablet is-9-desktop is-fourth-desktop">
+                                <div class="columns is-multiline is-variable is-3">
+                                    <div class="column is-12">
+                                        <h2 class="title is-primary">Recent Spine Videos</h2>
+                                        <p class="subtitle">by <?php echo $physician['name']; ?></p>
+                                    </div>
                                     <?php
 
                                     $videoModule = new Videos();
@@ -63,10 +66,14 @@ include(locate_template('template-parts/partials/top.php'));
                                         </div>
                                     <?php } ?>
                                 </div>
-                                <hr>
-                                <h2 class="title is-primary">Recent Spine Articles</h2>
-                                <p class="subtitle">by <?php echo $physician['name']; ?></p>
-                                <div class="columns is-multiline">
+
+
+                                <div class="columns is-multiline is-variable is-3">
+                                    <div class="column is-12">
+                                        <hr>
+                                        <h2 class="title is-primary">Recent Spine Articles</h2>
+                                        <p class="subtitle">by <?php echo $physician['name']; ?></p>
+                                    </div>
                                     <?php
 
                                     $articles = get_posts([
@@ -91,10 +98,12 @@ include(locate_template('template-parts/partials/top.php'));
                                     foreach($articles as $post){ ?>
                                         <?php get_template_part('template-parts/partials/mini-article', get_post_format()); ?>
                                     <?php } ?>
+                                    <hr>
                                 </div>
-                                <hr>
+
                             </div>
-                            <div class="column is-12-tablet is-4-desktop is-3-fullhd is-third-desktop">
+
+                            <div class="column is-12-tablet is-3-desktop is-third-desktop">
                                 <div class="sidebar-module physician-list">
                                     <p class="sidebar-title">Choose another doctor</p>
                                     <ul class="none">

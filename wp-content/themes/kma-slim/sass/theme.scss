@@ -1309,10 +1309,15 @@ body {
 .single-physician {
 
   .large-physician-photo {
-    display: block;
     -webkit-box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
     -moz-box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.2);
+    margin: 0 auto 1.5rem;
+    display: block;
+    @media screen and (min-width: $tablet) {
+
+      width: 100%;
+    }
   }
   .physician-details {
     height: 100%;
@@ -1435,7 +1440,7 @@ body {
 
 .sidebar-module {
   padding:2rem;
-  background-color: #f9f8e9;
+  background-color: #f5f4ee;
 
   .sidebar-title {
     color:#000;

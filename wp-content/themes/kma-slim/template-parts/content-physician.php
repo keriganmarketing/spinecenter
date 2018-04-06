@@ -1,6 +1,7 @@
 <?php
 
 use Includes\Modules\Team\Physicians;
+use Includes\Modules\Videos\Videos;
 
 /**
  * @package KMA
@@ -22,49 +23,80 @@ include(locate_template('template-parts/partials/top.php'));
             <section class="header section">
                 <div class="header-container">
                     <div class="container">
-                        <div class="columns">
-                            <div class="column is-3 physician-header-left">
-                                <img class="large-physician-photo" src="<?php echo $physician['photo']; ?>" >
-                            </div>
-                            <div class="column physician-header-right">
-                                <div class="physician-details">
-                                    <h1 class="title physician-name"><?php echo $headline; ?></h1>
-                                    <p class="specialties-list">
-                                        <?php foreach($specialties as $specialty){
-                                            echo $specialty.'<br>';
-                                        } ?>
-                                    </p>
-                                    <a class="button is-primary" href="/patient-center/appointments/?requested_physician=<?php echo $physician['name']; ?>" >Request an appointment</a>
-                                </div>
-                            </div>
-                        </div>
-
+                        <p class="title is-1"><?php echo $headline; ?></p>
                     </div>
                 </div>
             </section>
-            <section id="content" class="content section">
+            <?php include(locate_template('template-parts/partials/breadcrumbs.php')); ?>
+
+            <section id="content" class="section">
                 <div class="container">
-                    <div class="entry-content">
-
                         <div class="columns is-multiline">
-                            <?php if($physician['youtube_code'] !=''){ ?>
-                            <div class="column is-12 is-9-widescreen">
-                                <div class="physician-video">
-                                    <iframe class="embed-responsive-item" src="https://www.youtube-nocookie.com/embed/<?php echo $physician['youtube_code']; ?>?rel=0&amp;showinfo=0" frameborder="0" allowfullscreen=""></iframe>
-                                </div>
+                            <div class="column is-4-tablet is-3-widescreen">
+                                <img class="large-physician-photo" src="<?php echo $physician['photo']; ?>" >
+                                <a class="button is-primary" href="/patient-center/appointments/?requested_physician=<?php echo $physician['slug']; ?>" >Request an appointment</a>
                             </div>
-                            <?php } ?>
-
-                            <div class="column is-12 is-8-desktop is-9-widescreen <?php echo ($physician['youtube_code'] !='' ? 'is-third-widescreen' : 'is-second' ); ?>">
-                                <div class="physician-bio">
+                            <div class="column is-8-tablet is-9-widescreen">
+                                <div class="entry-content content">
                                     <?php //echo '<pre>',print_r($physician),'</pre>'; ?>
                                     <?php the_content(); ?>
                                 </div>
+                                <hr>
                             </div>
+                            <div class="column is-12-tablet is-8-desktop is-9-fullhd is-fourth-desktop">
+                                <h2 class="title is-primary">Recent Spine Videos</h2>
+                                <p class="subtitle">by <?php echo $physician['name']; ?></p>
+                                <div class="columns is-multiline">
+                                    <?php
 
-                            <div class="column is-12 is-4-desktop is-3-widescreen <?php echo ($physician['youtube_code'] !='' ? 'is-second-widescreen' : 'is-first' ); ?>">
+                                    $videoModule = new Videos();
+                                    $videos = $videoModule->getVideos([], $physician['slug']);
+
+                                    foreach($videos as $video){ ?>
+                                        <div class="column is-6-tablet is-4-desktop">
+                                            <a @click="$emit('toggleModal', 'youtube', '<?php echo $video['video_code']; ?>')" >
+                                                <figure class="image is-16by9">
+                                                    <img src="https://i.ytimg.com/vi/<?php echo $video['video_code']; ?>/0.jpg" alt="<?php echo $video['name']; ?>">
+                                                </figure>
+                                                <p style="margin-top:.25rem; text-align:center;"><?php echo $video['name']; ?></p>
+                                            </a>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <hr>
+                                <h2 class="title is-primary">Recent Spine Articles</h2>
+                                <p class="subtitle">by <?php echo $physician['name']; ?></p>
+                                <div class="columns is-multiline">
+                                    <?php
+
+                                    $articles = get_posts([
+                                        'post_type'      => 'post',
+                                        'posts_per_page' => 3,
+                                        'orderby'        => 'date',
+                                        'order'          => 'DESC',
+                                        'offset'         => 0,
+                                        'post_status'    => 'publish',
+                                        'tax_query' => [
+                                            [
+                                                'taxonomy'         => 'category',
+                                                'field'            => 'slug',
+                                                'terms'            => $physician['slug'],
+                                                'include_children' => false,
+                                            ]
+                                        ]
+                                    ]);
+
+                                    //echo '<pre>',print_r($articles),'</pre>';
+
+                                    foreach($articles as $post){ ?>
+                                        <?php get_template_part('template-parts/partials/mini-article', get_post_format()); ?>
+                                    <?php } ?>
+                                </div>
+                                <hr>
+                            </div>
+                            <div class="column is-12-tablet is-4-desktop is-3-fullhd is-third-desktop">
                                 <div class="sidebar-module physician-list">
-                                    <p class="sidebar-title">Select another doctor</p>
+                                    <p class="sidebar-title">Choose another doctor</p>
                                     <ul class="none">
                                         <?php $orthopedicSurgeons = $physicians->getPhysicians();
                                         foreach ($orthopedicSurgeons as $doctor){
@@ -74,14 +106,11 @@ include(locate_template('template-parts/partials/top.php'));
                                                  ($physician['id'] != $doctor['id'] ? '</a>' : '' ) . '</li>';
                                         } ?>
                                     </ul>
-
                                 </div>
                             </div>
 
                         </div>
-
                     </div>
-                </div>
             </section>
         </article>
     </div>

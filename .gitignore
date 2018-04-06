@@ -8,7 +8,7 @@ tags
 # Untracked prod/dev files
 wp-config.php
 wp-content/themes/kma-slim/vendor/
-wp-content/themes/kma-slim/composer.lock
+
 # Untracked prod files
 # wp-content/uploads/**
 # wp-admin/**

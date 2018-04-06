@@ -13,6 +13,9 @@
   font-weight: $weight-bold;
   font-size: .9em;
 }
+.is-bold {
+  font-weight: $weight-bold;
+}
 
 .is-rounded {
   border-radius: 2rem;
@@ -60,6 +63,10 @@
   order: 3;
 }
 
+.is-fourth {
+  order: 4;
+}
+
 .is-first-tablet {
   @media screen and (min-width: $tablet) {
     order: 1;
@@ -75,6 +82,12 @@
 .is-third-tablet {
   @media screen and (min-width: $tablet) {
     order: 3;
+  }
+}
+
+.is-fourth-tablet {
+  @media screen and (min-width: $tablet) {
+    order: 4;
   }
 }
 
@@ -96,6 +109,12 @@
   }
 }
 
+.is-fourth-desktop {
+  @media screen and (min-width: $desktop) {
+    order: 4;
+  }
+}
+
 .is-first-widescreen {
   @media screen and (min-width: $widescreen) {
     order: 1;
@@ -111,6 +130,12 @@
 .is-third-widescreen {
   @media screen and (min-width: $widescreen) {
     order: 3;
+  }
+}
+
+.is-fourth-widescreen {
+  @media screen and (min-width: $widescreen) {
+    order: 4;
   }
 }
 

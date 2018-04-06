@@ -1,63 +1,25 @@
-<?php
-use Includes\Modules\KMAFacebook\FacebookController;
-
-$facebook = new FacebookController();
-$feed = $facebook->getFeed(3);
-
-foreach ($feed->posts as $fbPost) {
-
-    $isVideo  = ($fbPost->type == 'video');
-    $hasImage = ($fbPost->full_picture != '' && $isVideo == false);
-    $date     = date('M j',strtotime($fbPost->created_time)) . ' at ' . date('g:i a',strtotime($fbPost->created_time));
-
-    ?>
-
-    <div class="column is-4">
-        <div class="card social-module facebook has-text-centered <?= ($hasImage == true ? 'has-image' : 'no-image'); ?>">
-            <?php if ($hasImage == true) { ?>
-                <div class="card-image">
-                    <img src="<?= $fbPost->full_picture; ?>">
-                </div>
-            <?php } ?>
-            <?php if ($isVideo == true) { ?>
-                <div class="card-video">
-                    <iframe
-                            src="<?= $fbPost->link; ?>"
-                            style="border:none;overflow:hidden"
-                            scrolling="no"
-                            frameborder="0"
-                            allowTransparency="true"
-                            allowFullScreen="true"
-                            width="100%"
-                            height="225">
-                    </iframe>
-                </div>
-            <?php } ?>
-            <div class="card-content">
-                <p class="post-text"><?= $fbPost->message; ?></p>
-                <p class="posted-on">Posted on <?= $date; ?></p>
-            </div>
-            <div class="card-bottom">
-                <a class="button is-primary is-large is-rounded has-shadow" target="_blank" href="<?= $fbPost->permalink_url; ?>">Read more on Facebook</a>
-            </div>
+<div class="column is-4">
+    <div class="card">
+        <div class="card-photo" >
+            <figure class="image is-16by9">
+                <a href="<?php echo get_the_permalink(); ?>">
+                <img src="<?php echo the_post_thumbnail_url( 'medium' ); ?>">
+                </a>
+            </figure>
+        </div>
+        <div class="card-content">
+            <h2 class="title"><?php echo $headline; ?></h2>
+            <?php echo ($subhead!='' ? '<p class="subtitle">'.$subhead.'</p>' : null); ?>
+            <?php echo wp_trim_words($post->post_content, 22)?>
+        </div>
+        <div class="card-footer">
+            <a class="card-footer-item" href="<?php echo get_the_permalink(); ?>">Read More</a>
+            <span class="card-footer-item" >
+		      Share:&nbsp;
+		      <a class="icon" href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+		      <a class="icon" href="#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
+		      <a class="icon" href="#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
+	      </span>
         </div>
     </div>
-<?php } ?>
-
-<!--<div class="column is-4">-->
-<!--	<div class="article">-->
-<!--		<div class="article-image">-->
-<!--            <a class="article-footer-item" href="--><?php //echo get_the_permalink(); ?><!--">-->
-<!--			<figure class="image is-4by3">-->
-<!--			<img src="--><?php //echo the_post_thumbnail_url( 'medium' ); ?><!--">-->
-<!--			</figure>-->
-<!--            </a>-->
-<!--		</div>-->
-<!--		<div class="article-content">-->
-<!--			--><?php //echo $content; ?>
-<!--		</div>-->
-<!--		<div class="article-footer">-->
-<!--		    <a class="article-footer-item" href="--><?php //echo get_the_permalink(); ?><!--">Read More</a>-->
-<!--		</div>-->
-<!--	</div>-->
-<!--</div>-->
+</div>

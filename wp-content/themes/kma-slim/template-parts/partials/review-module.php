@@ -19,7 +19,7 @@ for ($i = 0; $i < floor($feed['rating']); $i++) {
 }
 ?>
 <div class="review-module">
-    <h3 class="title is-1 is-primary"><span class="open-quote">&ldquo;</span> Patient Reviews</h3>
+    <h3 class="title is-1 is-secondary"><span class="open-quote">&ldquo;</span> Patient Reviews</h3>
     <div class="review single">
         <p class="review-text is-large is-info"><?= $feed['content']; ?></p>
         <p class="review-author">

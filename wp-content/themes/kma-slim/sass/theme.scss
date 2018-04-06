@@ -1327,7 +1327,6 @@ body {
       width: fit-content;
       margin-top: 1rem;
     }
-
   }
 
   .physician-video::before {
@@ -1368,7 +1367,6 @@ body {
       color: #000;
     }
   }
-
 }
 
 .modal {
@@ -1445,7 +1443,6 @@ body {
       text-decoration: underline !important;
     }
   }
-
 }
 
 figure.image.is-16by9 {
@@ -1544,10 +1541,6 @@ figure.image.is-16by9 {
         }
       }
     }
-
-
-
-
   }
 }
 
@@ -1660,25 +1653,39 @@ footer.stuck {
 #bot {
   position: relative;
   z-index: 1;
-  background-color: $primary;
+  background-color: $dark;
   padding: 45px 0 0;
 
-  h3, p, a {
-    color: #FFF;
+  h3, p {
+    color: rgba(255,255,255,.5);
     margin: 0;
   }
 
   h3 {
     font-size: 20px;
     font-weight: 700;
-    padding: 15px 0;
+    padding: 5px 0;
     text-transform: uppercase;
   }
 
   p {
-    font-size: 14px;
     line-height: 1.6em;
+  }  
+}
+
+.section-wrapper.footer-menu {
+    
+  .footer-title-link {
+    color: #FFF;
   }
+ 
+  li {
+    padding-bottom: .5rem;
+
+    .footer-link {
+       color: rgba(255,255,255,.5);
+    }     
+  }  
 }
 
 .section-wrapper.locations {
@@ -1696,8 +1703,28 @@ footer.stuck {
   }
 }
 
-.section-wrapper.footer-menu {
+.section-wrapper.footer-contact {
+  
+  .is-large {
+    font-size: 23px;
+  }
 
+  .is-bold {
+      font-weight: $weight-bold;
+      color: #FFF;
+  }
+  
+  .footer-tel-link-large {
+    color: #FFF;
+  }
+
+  .footer-tel-link {
+    color: #FFF;
+  }
+
+  .footer-email-link {
+    color: rgba(255,255,255,.5);
+  }
 }
 
 .social {
@@ -1706,18 +1733,22 @@ footer.stuck {
   svg {
     width: 40px;
     margin: .1rem .9rem;
+    padding-bottom: .9rem;
   }
 }
 
 #bot-bot {
   position: relative;
   z-index: 1;
-  background-color: $primary;
+  background-color: $dark;
   padding: 30px 0;
+
 
   .copyright-section {
     text-align: center;
     padding: 1rem;
+    //font-size: 14px;
+    //color: #FFF;
 
     p {
       color: #FFF;
@@ -1727,7 +1758,7 @@ footer.stuck {
         text-decoration: underline;
         color: #FFF;
       }
-    }
+    }    
 
     span#siteby {
       display: block;
@@ -1746,10 +1777,16 @@ footer.stuck {
     }
   }
 
-  .non-discriminatory-notice {
-    color: rgba(255,255,255,.75);
+  .help.non-discriminatory-notice {
+    font-size: 14px;
+    color: rgba(255,255,255,.5);
     padding:0 1rem;
     text-align: center;
+
+    a {
+      color: rgba(255,255,255,.5);
+    }
   }
 
 }
+

@@ -39,8 +39,8 @@ use Includes\Modules\Social\SocialSettingsPage;
         <div class="section-wrapper footer-logo">
             <h2 class="line-left line-right light">
                 <span class="line"></span>
-                <img src="<?php echo get_template_directory_uri() . '/img/logo-white.png'; ?>"
-                     alt="" class="footer-watermark">
+                <img class="bot-footer-watermark" src="<?php echo get_template_directory_uri() . '/img/logo-white.png'; ?>"
+                     alt="">
                 <span class="line"></span>
             </h2>
         </div>
@@ -58,9 +58,9 @@ use Includes\Modules\Social\SocialSettingsPage;
             </div>
         </div>
         <div class="section-wrapper footer-contact has-text-centered">
-            <p class="is-large is-bold"><a href="tel:1-833-SPINEBR">1-833-SPINEBR</a></p>
-            <p class="is-bold"><a href="tel:1-833-774-6327">(1-833-774-6327)</a></p>
-            <p class=""><a href="mailto:info@spinecenterbr.com">info@spinecenterbr.com</a></p>
+            <p class="is-large is-bold"><a class="footer-tel-link" href="tel:1-833-SPINEBR">1-833-SPINEBR</a></p>
+            <p class="is-bold"><a class="footer-tel-link" href="tel:1-833-774-6327">(1-833-774-6327)</a></p>
+            <p class=""><a class="footer-email-link" href="mailto:info@spinecenterbr.com">info@spinecenterbr.com</a></p>
         </div>
         <div class="section-wrapper locations">
             <?php include(locate_template('template-parts/partials/footer-locations.php')); ?>
@@ -85,7 +85,7 @@ use Includes\Modules\Social\SocialSettingsPage;
                     </p>
                     <p class="help non-discriminatory-notice">Bone & Joint Clinic of Baton Rouge, Inc. complies
                         with applicable Federal civil rights laws and does not discriminate on the basis of
-                        race, color, national origin, age, disability or sex. <a
+                        race, color, national origin, age, disability or sex. <a class="non-discriminatory-link"
                                 href="https://boneandjointclinicbr.com/wp-content/uploads/2017/11/nondiscrimination-notice_2016.pdf">Click&nbsp;to&nbsp;view&nbsp;our&nbsp;notice</a>.
                     </p>
                 </div>

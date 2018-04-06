@@ -118,11 +118,11 @@ function getPageChildren($pageName, $postChildren = '')
         ]);
     }
 
-    echo '<h3 class="page-list-title ' . $parent->post_name . '"><a href="'. get_permalink($parent->ID) . '" >' . $parent->post_title . '</a></h3>';
+    echo '<h3 class="page-list-title ' . $parent->post_name . '"><a class="footer-title-link" href="'. get_permalink($parent->ID) . '" >' . $parent->post_title . '</a></h3>';
     echo '<ul class="page-list ' . $parent->post_name . '">';
     foreach($children as $child ) {
         //echo '<pre>',print_r($child),'</pre>';
-        echo '<li>' . '<a href="' . get_permalink($child->ID) . '" >' . $child->post_title . '</a>' . '</li>';
+        echo '<li>' . '<a class="footer-link ' . $child->post_name . '" href="' . get_permalink($child->ID) . '" >' . $child->post_title . '</a>' . '</li>';
     }
     echo '</ul>';
 

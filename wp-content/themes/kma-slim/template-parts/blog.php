@@ -26,7 +26,7 @@ include(locate_template('template-parts/partials/top.php'));
                     <div class="columns is-multiline">
                         <?php while ( have_posts() ) : the_post(); ?>
                             <div class="column is-6-tablet is-4-desktop is-3-widescreen">
-                            <?php include(locate_template( 'template-parts/partials/mini-article.php')); ?>
+                            <?php get_template_part( 'template-parts/partials/mini-article', get_post_format() ); ?>
                             </div>
                         <?php endwhile; ?>
                     </div>

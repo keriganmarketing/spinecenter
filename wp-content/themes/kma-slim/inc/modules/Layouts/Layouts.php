@@ -81,14 +81,16 @@ class Layouts
                     'slug'        => 'procedures-sidebar'
                 )
             );
-//            wp_insert_term(
-//                'Services Sidebar',
-//                'layout',
-//                array(
-//                    'description' => '',
-//                    'slug'        => 'services-sidebar'
-//                )
-//            );
+
+            wp_insert_term(
+                'Patient Center Sidebar',
+                'layout',
+                array(
+                    'description' => '',
+                    'slug'        => 'patient-center-sidebar'
+                )
+            );
+
         });
 
     }

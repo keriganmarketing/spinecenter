@@ -109,7 +109,7 @@ function getPageChildren($pageName, $postChildren = '')
         ]);
     }else{
         $children = get_posts([
-            'post_type'      => 'physician',
+            'post_type'      => $postChildren,
             'posts_per_page' => -1,
             'orderby'        => 'menu_order',
             'order'          => 'ASC',

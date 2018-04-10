@@ -51,8 +51,8 @@
         position: absolute;
         z-index: -1;
         opacity: 0;
-        background-position: center;
-        background-size: conver;
+        background-position: center left;
+        background-size: cover;
     }
     .slide.active {
         opacity: 1;
@@ -60,6 +60,12 @@
     }
     .slide-container {
         align-items: center;
+    }
+
+    @media screen and (min-width: 1024px){
+        .slide {
+            background-position: center;
+        }
     }
 
 </style>

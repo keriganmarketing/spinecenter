@@ -17,7 +17,7 @@ include(locate_template('template-parts/partials/top.php'));
 <div id="mid">
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-        <div class="container">
+        <div class="container is-hidden-mobile is-hidden-tablet-only">
             <div class="appointment-box columns is-justified-end is-gapless">
                 <div class="column is-narrow" >
                     <?php include(locate_template('template-parts/partials/mini-appt-box.php')); ?>
@@ -49,6 +49,14 @@ include(locate_template('template-parts/partials/top.php'));
 
                 ?>
             </slider>
+        </div>
+
+        <div class="container is-hidden-desktop">
+            <div class="appointment-box columns is-justified-end is-gapless">
+                <div class="column is-narrow" >
+                    <?php include(locate_template('template-parts/partials/mini-appt-box.php')); ?>
+                </div>
+            </div>
         </div>
 
         <div class="section-wrapper home-page-text">

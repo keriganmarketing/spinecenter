@@ -34188,7 +34188,7 @@ if(false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(92)();
-exports.push([module.i, "\n.slide {\n    width:100%;\n    -webkit-transition:all linear 1.5s;\n    transition: all linear 1.5s;\n    position: absolute;\n    z-index: -1;\n    opacity: 0;\n    background-position: center;\n    background-size: conver;\n}\n.slide.active {\n    opacity: 1;\n    z-index: 0;\n}\n.slide-container {\n    -ms-flex-align: center;\n        -webkit-box-align: center;\n        align-items: center;\n}\n\n", ""]);
+exports.push([module.i, "\n.slide {\n    width:100%;\n    -webkit-transition:all linear 1.5s;\n    transition: all linear 1.5s;\n    position: absolute;\n    z-index: -1;\n    opacity: 0;\n    background-position: center left;\n    background-size: cover;\n}\n.slide.active {\n    opacity: 1;\n    z-index: 0;\n}\n.slide-container {\n    -ms-flex-align: center;\n        -webkit-box-align: center;\n        align-items: center;\n}\n@media screen and (min-width: 1024px){\n.slide {\n        background-position: center;\n}\n}\n\n", ""]);
 
 /***/ }),
 /* 362 */

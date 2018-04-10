@@ -106,10 +106,8 @@ let app = new Vue({
         }
 
         this.handleScroll();
-        if(this.isOpen) {
-            this.menuItems = this.$el.querySelectorAll('#MobileNavMenu .navbar-item');
-            this.handleMobileSubMenu();
-        }
+        this.menuItems = this.$el.querySelectorAll('#MobileNavMenu .navbar-item');
+        this.handleMobileSubMenu();
     },
 
     created: function () {

@@ -128,3 +128,41 @@ function getPageChildren($pageName, $postChildren = '')
 
     //return $children;
 }
+
+function getInsuranceCarriers(){
+    return [
+        'Access Care',
+        'Aetna EPO, MC & PPO',
+        'American Lifecare PPO & POS',
+        'Beech Street',
+        'Best Care',
+        'Blue Cross HMO, PPO, & Key Physician Networks',
+        'Champus/Tricare (except Prime)',
+        'Choice Care Network',
+        'CIGNA',
+        'Community Care Network (CCN)',
+        'Coventry',
+        'First Health',
+        'GEHA PPO/USA',
+        'Healthstar PPO',
+        'Humana',
+        'Humana Gold Plus',
+        'LWCC--OMNET',
+        'Maxicare',
+        'Medicare',
+        'Multiplan',
+        'Peoples Health',
+        'PHCS',
+        'PPO Plus',
+        'Pyramid Life',
+        'Secure Horizons Direct',
+        'State Group PPO',
+        'Sterling',
+        'Tenant Choice 65',
+        'United Healthcare HMO, POS & PPO',
+        'Universal Healthcare USA PPO',
+        'Verity Health',
+        'Wellcare',
+        'Worker\'s Compensation'
+    ];
+}

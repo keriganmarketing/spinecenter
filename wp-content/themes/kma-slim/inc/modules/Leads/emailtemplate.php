@@ -9,7 +9,7 @@
         table.data { background-color: #fff; }
         table.data td { background-color: #fdfdfd; border: 1px solid #FFF; font-size: 14px; color: #555; padding:4px 6px; }
         table.data td.label { font-weight:bold; width:30%; }
-        a { color: #9996a6; }
+        a { color: #124a7b; }
     </style>
 </head>
 <body bgcolor="#EAEAEA" style="background-color:#EAEAEA;">
@@ -24,7 +24,7 @@
     bgcolor="#FFFFFF" >
     <tbody>
     <tr>
-        <td style="padding:20px; border:1px solid #ddd; border-top:10px solid #000000; border-bottom: 0;" >
+        <td style="padding:20px; border:1px solid #ddd; border-top:10px solid #124a7b; border-bottom: 0;" >
             <h2>{headline}</h2>
             <p>{introcopy}</p>
 
@@ -36,7 +36,7 @@
         </td>
     </tr>
     <tr>
-        <td style="border-bottom: #E6E2B7 solid 2px; border-left:1px solid #ddd; border-right:1px solid #ddd; padding:10px;">
+        <td style="border-bottom: #083256 solid 2px; border-left:1px solid #ddd; border-right:1px solid #ddd; padding:10px;">
             <p style="text-align:center; color:#999; font-family:sans-serif; font-size:12px;"><strong>Submitted on:</strong> {datetime}</p>
         </td>
     </tr>

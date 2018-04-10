@@ -24,18 +24,18 @@ class KmaLeads
     {
         date_default_timezone_set('America/Chicago');
 
-        $this->domain = 'boneandjointclinicbr.com';
+        $this->domain = 'spinecenterbr.com';
 
         //separate multiple email addresses with a ';'
-        $this->adminEmail = 'appt@bjcbr.com';
+        $this->adminEmail = 'bryan@kerigan.com';
         //$this->ccEmail    = 'web@kerigan.com'; //Admin email only
-        $this->bccEmail   = 'support@kerigan.com; ddarby@bjcbr.com; jack@kerigan.com';
+        $this->bccEmail   = 'support@kerigan.com';
     }
 
     public function handleAppointment($contactInfo){
         $this->addToDashboard($contactInfo);
         $this->sendNotifications($contactInfo);
-        //echo '<pre>',print_r($contactInfo),'</pre>';
+        echo '<pre>',print_r($contactInfo),'</pre>';
     }
 
     /**

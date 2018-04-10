@@ -2,7 +2,7 @@
     <p class="title is-3 is-bold is-primary">Put back pain behind you.</p>
     <p>When you’re pain free, everything gets better.</p>
     <p>Start by requesting an appointment at The Spine Center:</p>
-    <form>
+    <form action="/patient-center/appointments/" method="get">
         <div class="columns is-justified is-multiline">
             <div class="column is-6">
                 <input class="input" name="first_name" placeholder="First name" required>
@@ -17,10 +17,14 @@
                 <input class="input" name="email_address" placeholder="Email address">
             </div>
             <div class="column is-6">
-                <div class="select">
-                    <select name="email_address" required>
+                <div class="select is-fullwidth">
+                    <select name="insurance" >
                         <option value="">Insurance <em>(if applicable)</em></option>
-                        <option value="bcbs">Blue Cross Blue Shield</option>
+                        <?php foreach(getInsuranceCarriers() as $carrier){ ?>
+                            <option value="<?= $carrier; ?>" <?= isset($_GET['insurance']) && $_GET['insurance'] == $carrier ? 'selected' : '' ?> >
+                                <?= $carrier; ?>
+                            </option>
+                        <?php } ?>
                     </select>
                 </div>
             </div>
@@ -28,11 +32,11 @@
                 <div class="control">
                     Would you like to receive our eNewsletter?
                     <label class="radio">
-                        <input type="radio" name="enewsletter">
+                        <input type="radio" name="newsletter_signup" value="yes">
                         Yes
                     </label>
                     <label class="radio">
-                        <input type="radio" name="enewsletter">
+                        <input type="radio" name="newsletter_signup" value="no">
                         No
                     </label>
                 </div>

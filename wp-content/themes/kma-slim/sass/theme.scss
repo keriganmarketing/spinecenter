@@ -40,6 +40,20 @@ body {
     height: 3rem;
   }
 
+  .button.is-large {
+    height: 4.5rem;
+  }
+
+  .has-icons-left {
+    .input {
+      padding-left: 2.25em;
+    }
+    .icon {
+      height: 3rem;
+      color: $secondary;
+    }
+  }
+
   .select {
     select {
       padding-left: 1.25em;
@@ -568,7 +582,7 @@ body {
 
   section.header.section {
     background-color: #f5f4ee;
-    padding: 4rem 1.5rem;
+    padding: 5rem 1.5rem 3rem;
     background-size: cover;
 
     @media screen and (min-width:470px){
@@ -577,6 +591,8 @@ body {
 
     .title.is-1 {
       font-size: 1.7em;
+      font-weight: $weight-light;
+      color: $secondary;
 
       @media screen and (min-width: 370px) {
         font-size: 2.1em;
@@ -879,7 +895,7 @@ body {
   padding-bottom: 4rem;
 
   .title {
-    font-weight: $weight-medium;
+    font-weight: $weight-light;
   }
 
   .subtitle {
@@ -1363,7 +1379,7 @@ body {
       font-weight: 700;
       font-size: 2.4em;
       text-transform: uppercase;
-      border-bottom: 2px solid #e6e2b7;
+      border-bottom: 2px solid $secondary;
       width: fit-content;
       padding-bottom: .25rem;
 
@@ -1479,7 +1495,7 @@ body {
   .sidebar-title {
     color:#000;
     font-weight: 700;
-    border-bottom: 2px solid #e6e2b7;
+    border-bottom: 2px solid $secondary;
     padding-bottom: .25rem;
 
   }

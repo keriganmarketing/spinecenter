@@ -529,7 +529,7 @@ body {
   height: 260px;
 
   @media screen and (min-width: 768px) {
-    height: 350px;
+    height: 380px;
   }
   @media screen and (min-width: $tablet) {
     height: 420px;
@@ -748,16 +748,16 @@ body {
 
   .appointment-box-container {
     padding: 1.5rem;
-    background-color: rgba(245,244,238,.85);
+    background-color: rgba(245,244,238,1);
     box-shadow: 0 0 30px rgba(0,0,0,.3);
     width: 100%;
 
-    @media screen and (min-width: $tablet) {
-      width: 550px;
-      margin: auto;
+    @media screen and (min-width: 768px) {
+      margin: -120px auto 0;
     }
 
     @media screen and (min-width: $desktop) {
+      background-color: rgba(245,244,238,.85);
       padding: 2rem;
       margin: 5rem 0 0;
       width: 550px;

@@ -100,30 +100,31 @@ body {
     left: auto;
     right: 0;
     box-shadow: 0 0 7px rgba(0,0,0,0.2);
-    background-color: #FFF;
-    overflow-y: scroll;
+    background-color: $dark;
+    overflow-y: unset;
     @media screen and (min-width:370px){
       width: 270px;
     }
 
     #mobile-menu {
       .navbar-item:nth-child(1),
-      .navbar-item:nth-child(9) {
-        background-color: #cecaa3;
+      .navbar-item:nth-child(4),
+      .navbar-item:nth-child(7),
+      .navbar-item:nth-child(10){
+        background-color: $primary;
       }
       .navbar-item:nth-child(2),
-      .navbar-item:nth-child(10) {
-        background-color: #93b5b9;
+      .navbar-item:nth-child(5),
+      .navbar-item:nth-child(8),
+      .navbar-item:nth-child(11){
+        background-color: $secondary;
       }
       .navbar-item:nth-child(3),
-      .navbar-item:nth-child(11) {
-        background-color: #8a9fa4;
+      .navbar-item:nth-child(6),
+      .navbar-item:nth-child(9),
+      .navbar-item:nth-child(12){
+        background-color: $dark;
       }
-      .navbar-item:nth-child(4) { background-color: #b3aec3; }
-      .navbar-item:nth-child(5) { background-color: #927596; }
-      .navbar-item:nth-child(6) { background-color: #ae9a92; }
-      .navbar-item:nth-child(7) { background-color: #c9bb9b; }
-      .navbar-item:nth-child(8) { background-color: #d9ac66; }
 
       .navbar-item{
         padding:0;
@@ -160,6 +161,7 @@ body {
           transition: height .5s;
           height: 0;
           display: none;
+
         }
       }
 
@@ -167,6 +169,24 @@ body {
         .navbar-dropdown.is-open {
           height: auto;
           display: block;
+          a.menu-item {
+            background-color: $info !important;
+            color: $dark !important;
+            padding: .5rem .5rem .5rem 1.25rem !important;
+            font-size: 14px !important;
+          }
+          a.menu-item::after {
+            float:right;
+            content: "\025B8";
+            border: none;
+            -webkit-transform: none;
+            transform: none;
+            margin-top: 0;
+            top: auto;
+            font-size: 1.65em;
+            line-height: 1em;
+            bottom: 18px;
+          }
         }
       }
 

@@ -22,7 +22,7 @@ include(locate_template('template-parts/partials/top.php'));
             </div>
         </section>
         <?php include(locate_template('template-parts/partials/breadcrumbs.php')); ?>
-        <section id="content" class="content section news">
+        <section id="content" class="content section clinic-news">
             <div class="container">
                 <h1><?php echo($subhead != '' ? '<span class="subtitle">' . $subhead . '</span>' : null); ?></h1>
                 <div class="columns is-multiline">

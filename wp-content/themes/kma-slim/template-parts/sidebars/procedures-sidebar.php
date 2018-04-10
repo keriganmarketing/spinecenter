@@ -1,5 +1,5 @@
 <?php
-$parentId = wp_get_post_parent_id( $post->ID );
+$parentId = 11;
 $pageList = get_children($parentId, [
     'post_parent'    => $parentId,
     'post_type'      => 'page',
@@ -9,7 +9,7 @@ $pageList = get_children($parentId, [
 ]);
 ?>
 <div class="sidebar-module specialties-list">
-    <p class="sidebar-title">Select another procedure</p>
+    <p class="sidebar-title">Spine procedures</p>
     <ul class="none">
         <?php foreach ($pageList as $page){
             echo '<li>' .

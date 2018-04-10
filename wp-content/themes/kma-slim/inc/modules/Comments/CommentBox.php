@@ -18,10 +18,10 @@ class CommentBox
         $this->domain = 'boneandjointclinicbr.com';
 
         //separate multiple email addresses with a ';'
-        $this->adminEmail = 'ddarby@bjcbr.com';
+        $this->adminEmail = 'bryan@kerigan.com';
         //$this->adminEmail = 'web@kerigan.com';
         //$this->ccEmail    = 'web@kerigan.com'; //Admin email only
-        $this->bccEmail   = 'support@kerigan.com; jack@kerigan.com';
+        $this->bccEmail   = 'support@kerigan.com;';
 
         if(isset($_POST['sfg354fgefrfedt45gfe4rfag']) && $_POST['sfg354fgefrfedt45gfe4rfag'] == ''){
             $this->handleComment($_POST);

@@ -42,7 +42,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                         <div class="field">
                             <label class="label">First Name</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="First Name" name="first_name" required>
+                                <input class="input" type="text" placeholder="First Name" name="first_name" value="<?= (isset($_GET['first_name']) ? $_GET['first_name'] : ''); ?>" required>
                             </div>
                         </div>
                     </div>
@@ -50,7 +50,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                         <div class="field">
                             <label class="label">Last Name</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="Last Name" name="last_name" required>
+                                <input class="input" type="text" placeholder="Last Name" name="last_name" value="<?= (isset($_GET['last_name']) ? $_GET['last_name'] : ''); ?>" required>
                             </div>
                         </div>
                     </div>
@@ -58,7 +58,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                         <div class="field">
                             <label class="label">Email Address</label>
                             <div class="control">
-                                <input class="input" type="email" placeholder="Email Address" name="email_address" required>
+                                <input class="input" type="email" placeholder="Email Address" name="email_address" value="<?= (isset($_GET['email_address']) ? $_GET['email_address'] : ''); ?>" required>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                         <div class="field">
                             <label class="label">Phone Number</label>
                             <div class="control">
-                                <input class="input phone-number-mask" type="phone" placeholder="(###) ###-####" name="phone_number" required>
+                                <input class="input phone-number-mask" type="phone" placeholder="(###) ###-####" name="phone_number" value="<?= (isset($_GET['phone_number']) ? $_GET['phone_number'] : ''); ?>" required>
                             </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                             <date-picker name="requested_time" icon="fa-clock-o" placeholder="Select a time" :config="{ enableTime: true, noCalendar: true, minuteIncrement: 15, appendTo: requested_time, time_24hr: false, dateFormat: 'h:i K' }"></date-picker>
                         </div>
                     </div>
-                    <div class="column is-12">
+                    <div class="column is-6">
                         <div class="field">
                             <label class="label">Desired Location</label>
                             <div class="control">
@@ -95,6 +95,23 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                                         foreach($locations->getLocations() as $location){ ?>
                                             <option value="<?php echo str_replace(' Clinic', '', $location['name']); ?>" <?php echo $requestedLocation == $location['slug'] ? 'selected' : '' ?> >
                                                 <?php echo str_replace(' Clinic', '', $location['name']); ?>
+                                            </option>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <div class="field">
+                            <label class="label">Insurance Carrier <em>(if applicable)</em></label>
+                            <div class="control">
+                                <div class="select is-fullwidth">
+                                    <select name="insurance" required>
+                                        <option value="" >Select a carrier</option>
+                                        <?php foreach(getInsuranceCarriers() as $carrier){ ?>
+                                            <option value="<?= $carrier; ?>" <?= isset($_GET['insurance']) && $_GET['insurance'] == $carrier ? 'selected' : '' ?> >
+                                                <?= $carrier; ?>
                                             </option>
                                         <?php } ?>
                                     </select>
@@ -115,11 +132,11 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     <div class="control">
                         <strong>Subscribe to our eNewsletter?</strong>
                         <label class="radio">
-                            <input type="radio" name="newsletter_signup" checked>
+                            <input type="radio" name="newsletter_signup" <?= (isset($_GET['newsletter_signup']) && $_GET['newsletter_signup'] == 'yes' ? 'checked' : ''); ?> >
                             Yes
                         </label>
                         <label class="radio">
-                            <input type="radio" name="newsletter_signup">
+                            <input type="radio" name="newsletter_signup" <?= (isset($_GET['newsletter_signup']) && $_GET['newsletter_signup'] == 'no' ? 'checked' : ''); ?> >
                             No
                         </label>
                     </div>

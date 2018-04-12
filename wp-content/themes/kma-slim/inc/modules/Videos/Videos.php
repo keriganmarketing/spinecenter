@@ -39,8 +39,10 @@ class Videos
 
         $video->addTaxonomy('Source');
         $video->addTaxonomy('Video Category');
+        $video->addTaxonomy('Video Author');
         $video->convertCheckToRadio('source');
         $video->convertCheckToRadio('video_category');
+        $video->convertCheckToRadio('video_author');
 
         $video->addMetaBox(
             'Video Info',

@@ -53,7 +53,7 @@ include(locate_template('template-parts/partials/top.php'));
                                     <?php
 
                                     $videoModule = new Videos();
-                                    $videos = $videoModule->getVideos([], $physician['slug']);
+                                    $videos = $videoModule->getVideos([], $physician['slug'], 'video_author');
 
                                     foreach($videos as $video){ ?>
                                         <div class="column is-6-tablet is-4-widescreen">

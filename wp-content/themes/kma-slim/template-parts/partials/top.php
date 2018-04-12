@@ -1,5 +1,7 @@
 <?php
+
 use Includes\Modules\Navwalker\BulmaNavwalker;
+
 /**
  * @package KMA
  * @subpackage kmaslim
@@ -51,4 +53,5 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
         </nav>
     </div>
 </header>
+<div class="top-tissue"></div>
 <div class="top-pad"></div>

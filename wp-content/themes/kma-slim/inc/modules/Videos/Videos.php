@@ -61,7 +61,7 @@ class Videos
 
     }
 
-    public function getVideos($args = [], $taxonomy = '')
+    public function getVideos($args = [], $taxonomy = '', $customTaxonomy = 'video_category')
     {
 
         $request = [
@@ -77,7 +77,7 @@ class Videos
             $categoryarray        = [
                 'relation' => 'AND',
                 [
-                    'taxonomy'         => 'video_category',
+                    'taxonomy'         => $customTaxonomy,
                     'field'            => 'slug',
                     'terms'            => $taxonomy,
                     'include_children' => false,

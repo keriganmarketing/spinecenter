@@ -160,7 +160,7 @@ class Physicians
     public function getPhysicianBySlug($slug)
     {
         $output = $this->getPhysicians([
-            'slug'           => $slug,
+            'name'           => $slug,
             'posts_per_page' => 1,
         ]);
 

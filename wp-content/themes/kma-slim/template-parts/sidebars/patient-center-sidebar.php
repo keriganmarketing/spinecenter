@@ -4,8 +4,8 @@ $pageList = get_children($parentId, [
     'post_parent'    => $parentId,
     'post_type'      => 'page',
     'posts_per_page' => -1,
-    'order'          => 'ASC',
     'orderby'        => 'menu_order',
+    'order'          => 'ASC',
 ]);
 ?>
 <div class="sidebar-module specialties-list">

@@ -157,6 +157,16 @@ class Physicians
         return $output[0];
     }
 
+    public function getPhysicianBySlug($slug)
+    {
+        $output = $this->getPhysicians([
+            'slug'           => $slug,
+            'posts_per_page' => 1,
+        ]);
+
+        return $output[0];
+    }
+
     public function getPhysicianNames()
     {
 

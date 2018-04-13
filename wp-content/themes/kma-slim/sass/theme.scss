@@ -1515,6 +1515,10 @@ body {
   .review-author p {
     font-size: 1em !important;
     margin: .5rem 0 1rem;
+
+    .author-name {
+      font-weight: $weight-bold;
+    }
   }
 }
 

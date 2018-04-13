@@ -61,14 +61,14 @@ class Videos
 
     }
 
-    public function getVideos($args = [], $taxonomy = '', $customTaxonomy = 'video_category')
+    public function getVideos($args = [], $taxonomy = '', $customTaxonomy = 'video_category', $limit = -1)
     {
 
         $request = [
             'post_type'      => 'video',
-            'posts_per_page' => -1,
-            'orderby'        => 'menu_order',
-            'order'          => 'ASC',
+            'posts_per_page' => $limit,
+            'orderby'        => 'date',
+            'order'          => 'DESC',
             'offset'         => 0,
             'post_status'    => 'publish',
         ];

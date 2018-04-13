@@ -34,7 +34,9 @@ include(locate_template('template-parts/partials/top.php'));
                         <div class="columns is-multiline is-variable is-8">
                             <div class="column is-4-tablet is-3-widescreen has-text-centered">
                                 <img class="large-physician-photo" src="<?php echo $physician['photo']; ?>" >
+                                <?php if($physician['appointments']){ ?>
                                 <a class="button is-primary is-rounded has-shadow is-bold is-caps" href="/patient-center/appointments/?requested_physician=<?php echo $physician['slug']; ?>" >Request an appointment</a>
+                                <?php } ?>
                             </div>
                             <div class="column is-8-tablet is-9-widescreen">
                                 <div class="entry-content content">

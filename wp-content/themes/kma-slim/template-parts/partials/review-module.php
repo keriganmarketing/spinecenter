@@ -10,7 +10,7 @@ $feed    = $reviews->getRecentReview();
 
 //echo '<pre>',print_r($feed),'</pre>';
 
-$when  = human_time_diff(strtotime($feed['date'])) . ' ago';
+//$when  = human_time_diff(strtotime($feed['date'])) . ' ago';
 $stars = '';
 for ($i = 0; $i < floor($feed['rating']); $i++) {
     $stars .= '<span class="icon is-small">
@@ -26,7 +26,7 @@ for ($i = 0; $i < floor($feed['rating']); $i++) {
             <span class="name">&mdash; <?= $feed['author']; ?></span>
             <span class="rating">rated <?= $stars; ?></span>
             <span class="source">on <?= $feed['location']; ?></span>
-            <span class="when"><?= $when; ?></span>
+            <span class="when"><?= $feed['date']; ?></span>
         </p>
     </div>
     <a class="more-reviews-link" href="/patient-center/testimonials/" >READ MORE REVIEWS</a>

@@ -1511,6 +1511,11 @@ body {
       color: $secondary;
     }
   }
+
+  .review-author p {
+    font-size: 1em !important;
+    margin: .5rem 0 1rem;
+  }
 }
 
 .modal {

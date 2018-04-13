@@ -28,13 +28,13 @@ include(locate_template('template-parts/partials/top.php'));
                             <div class="column is-6-tablet is-4-desktop is-3-widescreen">
                             <?php get_template_part( 'template-parts/partials/mini-article', get_post_format() ); ?>
                             </div>
-                            <?php
-                            wp_link_pages( array(
-                                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'kmaevent' ),
-                                'after'  => '</div>',
-                            ) );
-                            ?>
                         <?php endwhile; ?>
+
+                        <div class="columns is-justified">
+                            <div class="nav-previous column is-narrow"><?php next_posts_link( 'Older posts' ); ?></div>
+                            <div class="nav-next column is-narrow"><?php previous_posts_link( 'Newer posts' ); ?></div>
+                        </div>
+
                     </div>
                 </div>
             </section>

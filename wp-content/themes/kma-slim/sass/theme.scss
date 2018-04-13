@@ -1317,6 +1317,15 @@ body {
   }
 }
 
+#content {
+  .card  {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+}
+
 .clinic-news {
   display: flex;
   flex-direction: column;

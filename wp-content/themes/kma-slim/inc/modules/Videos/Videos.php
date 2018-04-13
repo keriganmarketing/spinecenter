@@ -147,7 +147,7 @@ class Videos
 
             $output = '<div class="columns is-multiline">';
             foreach($outputObjects as $item){
-                $thumbnailSrc = ($item['video_type'] == 'youtube' ? 'https://i.ytimg.com/vi/' . $item['video_code'] . '/0.jpg' : $item['photo']);
+                $thumbnailSrc = ($item['photo'] == '' && $item['video_type'] == 'youtube' ? 'https://i.ytimg.com/vi/' . $item['video_code'] . '/0.jpg' : $item['photo']);
                 $output .= '<div class="column is-6-tablet is-4-desktop is-3-widescreen ' . $item['video_type'] . '">
                                 <a @click="$emit(\'toggleModal\', \'' . $item['video_type'] . '\', \'' . $item['video_code'] . '\')" >
                                     <figure class="image is-16by9">

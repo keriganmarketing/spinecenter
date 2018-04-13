@@ -1500,6 +1500,19 @@ body {
   }
 }
 
+.section {
+  .youtube, .viewmedica {
+    figure {
+      margin: 0 !important;
+      border: 1px solid $info;
+    }
+    p {
+      font-size: 1.1em !important;
+      color: $secondary;
+    }
+  }
+}
+
 .modal {
 
   .modal-content.large {

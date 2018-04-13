@@ -59,10 +59,10 @@ include(locate_template('template-parts/partials/top.php'));
                                         <p class="subtitle">by <?php echo $physician['name']; ?></p>
                                     </div>
                                     <?php foreach($videos as $video){ ?>
-                                        <div class="column is-6-tablet is-4-widescreen">
-                                            <a @click="$emit('toggleModal', 'youtube', '<?php echo $video['video_code']; ?>')" >
+                                        <div class="column is-6-tablet is-4-widescreen <?php echo $video['video_type']; ?>">
+                                            <a @click="$emit('toggleModal', '<?php echo $video['video_type']; ?>', '<?php echo $video['video_code']; ?>')" >
                                                 <figure class="image is-16by9">
-                                                    <img src="https://i.ytimg.com/vi/<?php echo $video['video_code']; ?>/0.jpg" alt="<?php echo $video['name']; ?>">
+                                                    <img src="<?php echo ($video['photo'] == '' ? 'https://i.ytimg.com/vi/' . $video['video_code'] . '/0.jpg' : $video['photo']); ?>" alt="<?php echo $video['name']; ?>">
                                                 </figure>
                                                 <p style="margin-top:.25rem; text-align:center;"><?php echo $video['name']; ?></p>
                                             </a>

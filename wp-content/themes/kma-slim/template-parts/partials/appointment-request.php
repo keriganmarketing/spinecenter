@@ -74,14 +74,14 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     <div class="column is-6">
                         <label class="label">Desired Date</label>
                         <div class="field flatpickr" id="requested_date">
-                            <date-picker name="requested_date" icon="fa-calendar" placeholder="Select a date" :config="{ dateFormat: 'F j, Y', appendTo: requested_date }"></date-picker>
+                            <date-picker name="requested_date" icon="fa-calendar" placeholder="Select a date" :config="{ dateFormat: 'F j, Y', required: true, appendTo: requested_date }" required></date-picker>
                         </div>
                         <p class="help">Office hours are 8:00 am - 5:00 pm, Mon - Fri</p>
                     </div>
                     <div class="column is-6">
                         <label class="label">Desired Time</label>
-                        <div class="field flatpickr" id="requested_time">
-                            <date-picker name="requested_time" icon="fa-clock-o" placeholder="Select a time" :config="{ enableTime: true, noCalendar: true, minuteIncrement: 15, appendTo: requested_time, time_24hr: false, dateFormat: 'h:i K' }"></date-picker>
+                        <div class="field flatpickr" id="requested_time" >
+                            <date-picker name="requested_time" icon="fa-clock-o" placeholder="Select a time" :config="{ enableTime: true, required: true, noCalendar: true, minuteIncrement: 15, appendTo: requested_time, time_24hr: false, dateFormat: 'h:i K' }" ></date-picker>
                         </div>
                     </div>
                     <div class="column is-6">
@@ -133,11 +133,11 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     <div class="control">
                         <strong>Subscribe to our eNewsletter?</strong>
                         <label class="radio">
-                            <input type="radio" name="newsletter_signup" <?= (isset($_GET['newsletter_signup']) && $_GET['newsletter_signup'] == 'yes' ? 'checked' : ''); ?> >
+                            <input type="radio" name="newsletter_signup" <?= (isset($_GET['newsletter_signup']) && $_GET['newsletter_signup'] == 'yes' ? 'checked' : ''); ?> required>
                             Yes
                         </label>
                         <label class="radio">
-                            <input type="radio" name="newsletter_signup" <?= (isset($_GET['newsletter_signup']) && $_GET['newsletter_signup'] == 'no' ? 'checked' : ''); ?> >
+                            <input type="radio" name="newsletter_signup" <?= (isset($_GET['newsletter_signup']) && $_GET['newsletter_signup'] == 'no' ? 'checked' : ''); ?> required>
                             No
                         </label>
                     </div>
@@ -149,7 +149,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                 <div class="field">
                     <div class="control">
                         <label class="radio">
-                            <input type="radio" name="requested_physician" value="First Available">
+                            <input type="radio" name="requested_physician" value="First Available" required>
                             First Available
                             <p class="help">If you do not have a preference</p>
                         </label>
@@ -164,7 +164,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     <div class="field">
                         <div class="control">
                             <label class="radio">
-                                <input type="radio" name="requested_physician" value="<?php echo $physician['name']; ?>" <?php echo $requestedPhysician == $physician['slug'] ? 'checked' : '' ?> >
+                                <input type="radio" name="requested_physician" value="<?php echo $physician['name']; ?>" <?php echo $requestedPhysician == $physician['slug'] ? 'checked' : '' ?> required>
                                 <?php echo $physician['name']; ?><br>
 <!--                                <p class="help">--><?php //echo $specialties; ?><!--</p>-->
                             </label>

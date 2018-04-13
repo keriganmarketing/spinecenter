@@ -38275,7 +38275,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "name": this.name,
       "placeholder": this.placeholder,
-      "config": this.config
+      "config": this.config,
+      "required": ""
     },
     model: {
       value: (_vm.date),

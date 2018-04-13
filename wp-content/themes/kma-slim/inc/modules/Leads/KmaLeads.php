@@ -98,6 +98,7 @@ class KmaLeads
             'Requested Date'         => $contactInfo['requested_date'],
             'Requested Time'         => $contactInfo['requested_time'],
             'Requested Location'     => $contactInfo['requested_location'],
+            'Insurance'              => $contactInfo['insurance'],
             'Requested Physician'    => $contactInfo['requested_physician'],
             'Additional Information' => $contactInfo['additional_instructions'],
         ];

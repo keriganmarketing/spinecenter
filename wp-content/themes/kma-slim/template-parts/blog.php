@@ -29,13 +29,11 @@ include(locate_template('template-parts/partials/top.php'));
                             <?php get_template_part( 'template-parts/partials/mini-article', get_post_format() ); ?>
                             </div>
                         <?php endwhile; ?>
-
-                        <hr>
-                        <div class="columns is-justified has-text-centered">
-                            <div class="nav-next column is-narrow has-text-right"><?php previous_posts_link( 'Newer posts' ); ?></div>
-                            <div class="nav-previous column is-narrow has-text-left"><?php next_posts_link( 'Older posts' ); ?></div>
-                        </div>
-
+                    </div>
+                    <hr>
+                    <div class="columns is-justified has-text-centered">
+                        <div class="nav-next column is-narrow has-text-right"><?php previous_posts_link( 'Newer posts' ); ?></div>
+                        <div class="nav-previous column is-narrow has-text-left"><?php next_posts_link( 'Older posts' ); ?></div>
                     </div>
                 </div>
             </section>

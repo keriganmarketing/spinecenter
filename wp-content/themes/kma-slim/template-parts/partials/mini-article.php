@@ -14,9 +14,9 @@ $linkedInShare = 'https://www.linkedin.com/shareArticle?mini=true&url=' . get_th
         </figure>
     </div>
     <div class="card-content">
-        <h2 class="title"><?php echo $headline; ?></h2>
-        <?php echo($subhead != '' ? '<p class="subtitle">' . $subhead . '</p>' : null); ?>
-        <?php echo wp_trim_words($post->post_content, 22) ?>
+        <h2 class="title is-4"><?php echo $post->post_title; ?></h2>
+        <p class="subtitle"><?php echo date('M j, Y', strtotime($post->post_date)); ?></p>
+        <p><?php echo wp_trim_words($post->post_content, 22) ?></p>
     </div>
     <div class="card-footer">
         <a class="card-footer-item" href="<?php echo get_the_permalink(); ?>">Read More</a>

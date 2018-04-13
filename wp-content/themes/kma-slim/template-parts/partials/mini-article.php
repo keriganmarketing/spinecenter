@@ -22,10 +22,10 @@ $linkedInShare = 'https://www.linkedin.com/shareArticle?mini=true&url=' . get_th
         <a class="card-footer-item" href="<?php echo get_the_permalink(); ?>">Read More</a>
         <span class="card-footer-item">
 		      Share:&nbsp;
-		      <a class="icon" href="<?php echo $facebookShare; ?>"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
-		      <a class="icon" href="<?php echo $twitterShare; ?>"><i class="fa fa-twitter-square" aria-hidden="true"></i></a>
-		      <a class="icon" href="<?php echo $googleShare; ?>"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a>
-            <a class="icon" href="<?php echo $linkedInShare; ?>"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+		      <a class="icon" href="<?php echo $facebookShare; ?>"><i class="fa fa-facebook-square" aria-hidden="true" target="_blank"></i></a>
+		      <a class="icon" href="<?php echo $twitterShare; ?>"><i class="fa fa-twitter-square" aria-hidden="true" target="_blank"></i></a>
+		      <a class="icon" href="<?php echo $googleShare; ?>"><i class="fa fa-google-plus-square" aria-hidden="true" target="_blank"></i></a>
+              <a class="icon" href="<?php echo $linkedInShare; ?>"><i class="fa fa-linkedin-square" aria-hidden="true" target="_blank"></i></a>
 	      </span>
     </div>
 </div>

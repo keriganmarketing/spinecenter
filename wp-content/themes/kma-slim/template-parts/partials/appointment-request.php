@@ -33,10 +33,10 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
 
     <form method="post">
 
-        <div class="columns is-multiline">
+        <div class="columns is-multiline is-variable is-8">
 
             <div class="column is-12 is-6-desktop">
-                <div class="columns is-multiline">
+                <div class="columns is-multiline is-variable is-3">
 
                     <div class="column is-6">
                         <div class="field">
@@ -122,6 +122,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                 </div>
 
                 <div class="field">
+                    &nbsp;
                     <label class="label">Is there anything else you'd like us to know?</label>
                     <div class="control">
                         <textarea class="textarea" placeholder="Type your message here." name="additional_instructions"></textarea>
@@ -157,18 +158,19 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                 <?php
                 $physicians = new Physicians();
                 foreach ($physicians->getPhysicians() as $num => $physician) {
+                    if($physician['appointments']){
                     $specialties = $physician['specialties'] != '' ? str_replace('<br />', ',', nl2br($physician['specialties'])) : '';
                     ?>
                     <div class="field">
                         <div class="control">
                             <label class="radio">
-                                <input type="radio" name="requested_physician" value="<?php echo $physician['name']; ?>" <?php echo $requestedPhysician == $physician['name'] ? 'checked' : '' ?> >
+                                <input type="radio" name="requested_physician" value="<?php echo $physician['name']; ?>" <?php echo $requestedPhysician == $physician['slug'] ? 'checked' : '' ?> >
                                 <?php echo $physician['name']; ?><br>
-                                <p class="help"><?php echo $specialties; ?></p>
+<!--                                <p class="help">--><?php //echo $specialties; ?><!--</p>-->
                             </label>
                         </div>
                     </div>
-                <?php } ?>
+                <?php }} ?>
             </div>
 
 

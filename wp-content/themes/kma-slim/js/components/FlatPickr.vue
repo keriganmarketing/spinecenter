@@ -1,6 +1,6 @@
 <template>
     <div class="control has-icons-left">
-        <flat-pickr v-model="date" :name="this.name" :placeholder="this.placeholder" :config="this.config" ></flat-pickr>
+        <flat-pickr v-model="date" :name="this.name" :placeholder="this.placeholder" :config="this.config" required></flat-pickr>
         <span class="icon is-small is-left">
             <i :class="['fa', this.icon ]"></i>
         </span>

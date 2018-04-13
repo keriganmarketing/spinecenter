@@ -53,6 +53,7 @@ include(locate_template('template-parts/partials/top.php'));
                                     <?php
 
                                     $videoModule = new Videos();
+                                    echo $physician['slug'];
                                     $videos = $videoModule->getVideos([], $physician['slug'], 'video_author');
 
                                     foreach($videos as $video){ ?>

@@ -18,7 +18,7 @@ $specialties = $physician['specialties'] != '' ? explode('<br />', nl2br($physic
 
     <p class="physician-name"><?php echo $physician['name']; ?></p>
     <?php if($physician['appointments']){ ?>
-    <p class="physician-link"><a href="/patient-center/appointments/<?php echo $physician['slug']; ?>" >Request an appointment</a></p>
+    <p class="physician-link"><a href="/patient-center/appointments/?requested_physician=<?php echo $physician['slug']; ?>" >Request an appointment</a></p>
     <?php } ?>
 
 </div>

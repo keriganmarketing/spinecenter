@@ -1524,6 +1524,10 @@ body {
 
 .featured-image-sidebar {
   border: 1px solid #ccc;
+  img {
+    min-width: 100%;
+    display: block;
+  }
 }
 
 .modal {

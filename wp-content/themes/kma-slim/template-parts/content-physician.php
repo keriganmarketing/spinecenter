@@ -54,7 +54,7 @@ include(locate_template('template-parts/partials/top.php'));
 
                                     if(count($videos)>0){
                                     ?>
-                                    <div class="column is-12">
+                                    <div class="column is-12 news">
                                         <h2 class="title is-primary">Recent Spine Videos</h2>
                                         <p class="subtitle">by <?php echo $physician['name']; ?></p>
                                     </div>

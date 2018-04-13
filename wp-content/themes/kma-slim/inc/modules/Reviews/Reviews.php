@@ -133,7 +133,7 @@ class Reviews
                 <i class="fa fa-star" aria-hidden="true"></i>
                </span>';
                 }
-                $stars *= ' on ';
+                $stars .= ' on ';
                 $rating = $stars;
             }else{
                 $rating = ', ';

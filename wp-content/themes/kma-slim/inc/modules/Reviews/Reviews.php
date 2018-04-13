@@ -121,12 +121,28 @@ class Reviews
         $template = file_get_contents(wp_normalize_path(dirname(__FILE__) . '/review-template.php'));
         $output   = '<div class="review-module">';
         foreach ($reviews as $review) {
+
             $newReview = str_replace('{review-content}', $review['content'], $template);
             $newReview = str_replace('{review-author}', $review['author'], $newReview);
             $newReview = str_replace('{review-company}', $review['company'], $newReview);
-            $newReview = str_replace('{review-rating}', $review['rating'], $newReview);
-            $newReview = str_replace('{review-date}', $review['date'], $newReview);
-            $newReview = str_replace('{review-location}', ', ' . $review['location'], $newReview);
+
+            if($review['rating'] != '') {
+                $stars = '';
+                for ($i = 0; $i < floor($review['rating']); $i++) {
+                    $stars .= '<span class="icon is-small">
+                <i class="fa fa-star" aria-hidden="true"></i>
+               </span>';
+                }
+
+                $newReview = str_replace('{review-rating}', ' rated ' . $stars . ' on ', $newReview);
+            }
+
+            $newReview = str_replace('{review-location}', $review['location'], $newReview);
+
+            if($review['date'] != '') {
+                $newReview = str_replace('{review-date}', ' ' . human_time_diff(strtotime($review['date'])) . ' ago', $newReview);
+            }
+
             $output    .= $newReview;
         }
         $output .= '</div>';
@@ -180,7 +196,7 @@ class Reviews
                 'author'   => get_post_meta($post->ID, 'author_info_name', true),
                 'company'  => get_post_meta($post->ID, 'author_info_company', true),
                 'featured' => get_post_meta($post->ID, 'author_info_featured', true),
-                'date'     => human_time_diff(strtotime(get_post_meta($post->ID, 'author_info_date', true))) . ' ago',
+                'date'     => get_post_meta($post->ID, 'author_info_date', true),
                 'location' => get_post_meta($post->ID, 'author_info_location', true),
                 'rating'   => get_post_meta($post->ID, 'author_info_stars', true)
             ];

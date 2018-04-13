@@ -35,7 +35,7 @@ class KmaLeads
     public function handleAppointment($contactInfo){
         $this->addToDashboard($contactInfo);
         $this->sendNotifications($contactInfo);
-        echo '<pre>',print_r($contactInfo),'</pre>';
+//        echo '<pre>',print_r($contactInfo),'</pre>';
     }
 
     /**

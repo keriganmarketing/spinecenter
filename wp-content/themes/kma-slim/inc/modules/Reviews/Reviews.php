@@ -171,9 +171,8 @@ class Reviews
     {
 
         $request = $this->getReviews([
-            'orderby'        => 'meta_value_num',
+            'orderby'        => 'date_posted',
             'order'          => 'DESC',
-            'meta_key'       => 'author_info_date',
             'posts_per_page' => 1,
             'meta_query'     => [
                 [

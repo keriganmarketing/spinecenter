@@ -174,7 +174,14 @@ class Reviews
             'orderby'        => 'meta_value_num',
             'order'          => 'DESC',
             'meta_key'       => 'author_info_date',
-            'posts_per_page' => 1
+            'posts_per_page' => 1,
+            'meta_query'     => [
+                [
+                    'key'     => 'author_info_featured',
+                    'value'   => 'on',
+                    'compare' => '='
+                ]
+            ]
         ]);
 
         return $request[0];

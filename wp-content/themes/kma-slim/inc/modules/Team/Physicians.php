@@ -164,6 +164,8 @@ class Physicians
             'posts_per_page' => 1,
         ]);
 
+        echo $slug;
+
         return $output[0];
     }
 

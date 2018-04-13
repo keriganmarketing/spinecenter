@@ -102,7 +102,7 @@
                     <p>Helpful information before your visit and common patient questions.</p>
                 </div>
                 <div class="function-button">
-                    <a class="button is-primary" href="/patient-center/faqs/">Read More</a>
+                    <a class="button is-primary" href="/patient-center/frequently-asked-questions/">Read More</a>
                 </div>
             </div>
         </div>

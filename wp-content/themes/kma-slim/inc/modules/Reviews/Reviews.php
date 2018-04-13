@@ -180,7 +180,7 @@ class Reviews
                 'author'   => get_post_meta($post->ID, 'author_info_name', true),
                 'company'  => get_post_meta($post->ID, 'author_info_company', true),
                 'featured' => get_post_meta($post->ID, 'author_info_featured', true),
-                'date'     => date('YmdGi', strtotime(get_post_meta($post->ID, 'author_info_date', true))),
+                'date'     => human_time_diff(strtotime(get_post_meta($post->ID, 'author_info_date', true))) . ' ago',
                 'location' => get_post_meta($post->ID, 'author_info_location', true),
                 'rating'   => get_post_meta($post->ID, 'author_info_stars', true)
             ];

@@ -23,11 +23,11 @@ for ($i = 0; $i < floor($feed['rating']); $i++) {
     <div class="review single">
         <p class="review-text is-large is-info"><?= $feed['content']; ?></p>
         <p class="review-author">
-            <span class="name">&mdash; <?= $feed['author']; ?></span>
-            <span class="rating"><?= ($stars != '' ? 'rated ' . $stars : ', '); ?></span>
-            <span class="source"><?= ($feed['location'] != '' ? 'on ' . $feed['location'] : ''); ?></span>
-            <span class="when"><?= ($feed['date'] != '' ? $when : ''); ?></span>
+            <span class="name">&mdash; <?= $feed['author']; ?></span><span
+                    class="rating"><?= ($stars != '' ? ' rated ' . $stars : ', '); ?></span><span
+                    class="source"><?= ($feed['location'] != '' ? ' on ' . $feed['location'] : ''); ?></span><span
+                    class="when"><?= ($feed['date'] != '' ? ' ' . $when : ''); ?></span>
         </p>
     </div>
-    <a class="more-reviews-link" href="/patient-center/testimonials/" >READ MORE REVIEWS</a>
+    <a class="more-reviews-link" href="/patient-center/testimonials/">READ MORE REVIEWS</a>
 </div>

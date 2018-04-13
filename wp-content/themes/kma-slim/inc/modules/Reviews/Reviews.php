@@ -127,21 +127,27 @@ class Reviews
             $newReview = str_replace('{review-company}', $review['company'], $newReview);
 
             if($review['rating'] != '') {
-                $stars = '';
+                $stars = ' rated ';
                 for ($i = 0; $i < floor($review['rating']); $i++) {
                     $stars .= '<span class="icon is-small">
                 <i class="fa fa-star" aria-hidden="true"></i>
                </span>';
                 }
-
-                $newReview = str_replace('{review-rating}', ' rated ' . $stars . ' on ', $newReview);
+                $stars = ' on ';
+                $rating = $stars;
+            }else{
+                $rating = ', ';
             }
 
+            $newReview = str_replace('{review-rating}', $rating, $newReview);
             $newReview = str_replace('{review-location}', $review['location'], $newReview);
 
             if($review['date'] != '') {
-                $newReview = str_replace('{review-date}', ' ' . human_time_diff(strtotime($review['date'])) . ' ago', $newReview);
+                $date = ' ' . human_time_diff(strtotime($review['date'])) . ' ago';
+            }else{
+                $date = '';
             }
+            $newReview = str_replace('{review-date}', $date, $newReview);
 
             $output    .= $newReview;
         }

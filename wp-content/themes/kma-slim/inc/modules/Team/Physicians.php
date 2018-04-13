@@ -54,6 +54,7 @@ class Physicians
                 'Photo'        => 'image',
                 'Specialties'  => 'textarea',
                 'YouTube Code' => 'text',
+                'Hide from Appointment Request' => 'boolean'
             ]
         );
 
@@ -136,6 +137,7 @@ class Physicians
                 'specialties'  => (isset($item->contact_info_specialties) ? $item->contact_info_specialties : null),
                 'youtube_code' => (isset($item->contact_info_youtube_code) ? $item->contact_info_youtube_code : null),
                 'photo'        => (isset($item->contact_info_photo) ? $item->contact_info_photo : null),
+                'appointments' => (isset($item->contact_info_hide_from_appointment_request) && $item->contact_info_hide_from_appointment_request == 'on' ? false : true),
                 'link'         => get_permalink($item->ID),
             ]);
 

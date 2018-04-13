@@ -66,7 +66,9 @@ include(locate_template('template-parts/partials/top.php'));
                                             </a>
                                         </div>
                                     <?php } ?>
-                                        <hr>
+                                        <div class="column is-12">
+                                            <hr>
+                                        </div>
                                     <?php } ?>
                                 </div>
 
@@ -102,7 +104,6 @@ include(locate_template('template-parts/partials/top.php'));
                                         <?php get_template_part('template-parts/partials/mini-article', get_post_format()); ?>
                                         </div>
                                     <?php } ?>
-                                    <hr>
                                     <?php } ?>
                                 </div>
 

@@ -46,17 +46,17 @@ include(locate_template('template-parts/partials/top.php'));
                             </div>
                             <div class="column is-12-tablet is-9-desktop is-fourth-desktop">
                                 <div class="columns is-multiline is-variable is-3">
+                                    <?php
+                                    $videoModule = new Videos();
+                                    $videos = $videoModule->getVideos([], $physician['slug'], 'video_author');
+
+                                    if(count($videos)>0){
+                                    ?>
                                     <div class="column is-12">
                                         <h2 class="title is-primary">Recent Spine Videos</h2>
                                         <p class="subtitle">by <?php echo $physician['name']; ?></p>
                                     </div>
-                                    <?php
-
-                                    $videoModule = new Videos();
-                                    echo $physician['slug'];
-                                    $videos = $videoModule->getVideos([], $physician['slug'], 'video_author');
-
-                                    foreach($videos as $video){ ?>
+                                    <?php foreach($videos as $video){ ?>
                                         <div class="column is-6-tablet is-4-widescreen">
                                             <a @click="$emit('toggleModal', 'youtube', '<?php echo $video['video_code']; ?>')" >
                                                 <figure class="image is-16by9">
@@ -66,17 +66,14 @@ include(locate_template('template-parts/partials/top.php'));
                                             </a>
                                         </div>
                                     <?php } ?>
+                                        <hr>
+                                    <?php } ?>
                                 </div>
 
 
-                                <div class="columns is-multiline is-variable is-3">
-                                    <div class="column is-12">
-                                        <hr>
-                                        <h2 class="title is-primary">Recent Spine Articles</h2>
-                                        <p class="subtitle">by <?php echo $physician['name']; ?></p>
-                                    </div>
-                                    <?php
 
+                                <div class="columns is-multiline is-variable is-3">
+                                    <?php
                                     $articles = get_posts([
                                         'post_type'      => 'post',
                                         'posts_per_page' => 3,
@@ -94,19 +91,24 @@ include(locate_template('template-parts/partials/top.php'));
                                         ]
                                     ]);
 
-                                    //echo '<pre>',print_r($articles),'</pre>';
-
-                                    foreach($articles as $post){ ?>
+                                    if(count($articles)>0){
+                                    ?>
+                                    <div class="column is-12">
+                                        <h2 class="title is-primary">Recent Spine Articles</h2>
+                                        <p class="subtitle">by <?php echo $physician['name']; ?></p>
+                                    </div>
+                                    <?php foreach($articles as $post){ ?>
                                         <div class="column is-6-tablet is-4-widescreen">
                                         <?php get_template_part('template-parts/partials/mini-article', get_post_format()); ?>
                                         </div>
                                     <?php } ?>
                                     <hr>
+                                    <?php } ?>
                                 </div>
 
                             </div>
 
-                            <div class="column is-12-tablet is-3-desktop is-third-desktop">
+                            <div class="column">
                                 <div class="sidebar-module physician-list">
                                     <p class="sidebar-title">Choose another doctor</p>
                                     <ul class="none">

@@ -30,9 +30,10 @@ include(locate_template('template-parts/partials/top.php'));
                             </div>
                         <?php endwhile; ?>
 
-                        <div class="columns is-justified">
-                            <div class="nav-previous column is-narrow"><?php next_posts_link( 'Older posts' ); ?></div>
-                            <div class="nav-next column is-narrow"><?php previous_posts_link( 'Newer posts' ); ?></div>
+                        <hr>
+                        <div class="columns is-justified has-text-centered">
+                            <div class="nav-next column is-narrow has-text-right"><?php previous_posts_link( 'Newer posts' ); ?></div>
+                            <div class="nav-previous column is-narrow has-text-left"><?php next_posts_link( 'Older posts' ); ?></div>
                         </div>
 
                     </div>

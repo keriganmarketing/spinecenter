@@ -1324,6 +1324,12 @@ body {
     flex-direction: column;
     justify-content: space-between;
   }
+
+  @media screen and (max-width: $tablet) {
+    a {
+      word-wrap: break-word;
+    }
+  }
 }
 
 .clinic-news {

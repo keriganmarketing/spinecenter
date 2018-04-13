@@ -12,9 +12,9 @@ $subhead  = ($post->page_information_subhead != '' ? $post->page_information_sub
 $featuredPhoto = get_the_post_thumbnail( $post, 'post-thumbnail');
 $author = get_the_category();
 $physicians = new Physicians();
-$physician = $physicians->getPhysicianBySlug($author->category_nicename);
+$physician = $physicians->getPhysicianBySlug($author->slug);
 
-print_r($physician);
+
 
 $sidebar = get_the_terms($post,'layout');
 $getSidebar = (isset($sidebar[0]->slug) ? $sidebar[0]->slug : '');
@@ -39,6 +39,7 @@ include(locate_template('template-parts/partials/top.php'));
                                 <?php include(locate_template('template-parts/sidebars/featured-image-sidebar.php')); ?>
                                 <h3>Share this:</h3>
                                 <?php
+                                //print_r($author);
                                 //share links
                                 $facebookShare = 'https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '&display=popup';
                                 $twitterShare = 'https://twitter.com/home?status=' . get_the_permalink();

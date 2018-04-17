@@ -145,7 +145,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
 
             </div>
             <div class="column is-12 is-6-desktop">
-                <label class="label">Desired Physician</label>
+                <label class="label">Desired Provider</label>
                 <div class="field">
                     <div class="control">
                         <label class="radio">

@@ -32,7 +32,7 @@
     "jquery-mask-plugin": "^1.14.12",
     "loader-utils": "^1.1.0",
     "purgecss-webpack-plugin": "^0.22.0",
-    "vue-flatpickr-component": "^4.0.0",
+    "vue-flatpickr-component": "^7.0.1",
     "vue-parallax-js": "0.0.5",
     "vue-slick": "^1.1.12",
     "vue-smooth-scroll": "^1.0.13",

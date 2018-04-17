@@ -130,17 +130,45 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     <div class="column is-6-tablet is-4-desktop">
                         <label class="label">Desired Date</label>
                         <div class="field flatpickr" id="requested_date">
-                            <date-picker name="requested_date" icon="fa-calendar" placeholder="Select a date"
-                                         :config="{ dateFormat: 'F j, Y', required: true, appendTo: requested_date }"
-                                         required></date-picker>
+                            <date-picker
+                                    icon="fa-calendar"
+                                    placeholder="Select a date"
+                                    name="requested_date"
+                                    :required="true"
+                                    :config="{
+                                        dateFormat: 'F j, Y',
+                                        minDate: 'today',
+                                        appendTo: requested_date,
+                                        disable: [
+                                            function(date) {
+                                                // disable weekends
+                                                return (date.getDay() === 0 || date.getDay() === 6);
+                                            }
+                                        ]
+                                    }"
+                            ></date-picker>
                         </div>
                         <p class="help">Office hours are 8:00 am - 5:00 pm, Mon - Fri</p>
                     </div>
                     <div class="column is-6-tablet is-4-desktop">
                         <label class="label">Desired Time</label>
                         <div class="field flatpickr" id="requested_time">
-                            <date-picker name="requested_time" icon="fa-clock-o" placeholder="Select a time"
-                                         :config="{ enableTime: true, required: true, noCalendar: true, minuteIncrement: 15, appendTo: requested_time, time_24hr: false, dateFormat: 'h:i K' }"></date-picker>
+                            <date-picker
+                                    icon="fa-clock-o"
+                                    placeholder="Select a time"
+                                    name="requested_time"
+                                    :required="true"
+                                    :config="{
+                                        enableTime: true,
+                                        noCalendar: true,
+                                        minuteIncrement: 15,
+                                        appendTo: requested_time,
+                                        time_24hr: false,
+                                        dateFormat: 'h:i K',
+                                        minDate: '8:00',
+                                        maxDate: '16:45'
+                                    }"
+                            ></date-picker>
                         </div>
                     </div>
                     <div class="column is-12-tablet is-4-desktop">
@@ -171,7 +199,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     <div class="column is-6-tablet is-4-desktop is-3-fullhd">
                         <div class="field">
                             <div class="control">
-                                <label class="radio">
+                                <label class="radio hoverable">
                                     <input type="radio" name="requested_physician" value="First Available"
                                            required>
                                     First Available
@@ -187,7 +215,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                             <div class="column is-6-tablet is-4-desktop is-3-fullhd">
                                 <div class="field">
                                     <div class="control">
-                                        <label class="radio">
+                                        <label class="radio hoverable">
                                             <input type="radio" name="requested_physician"
                                                    value="<?php echo $physician['name']; ?>" <?php echo $requestedPhysician == $physician['slug'] ? 'checked' : '' ?>
                                                    required>
@@ -280,7 +308,8 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
             <input type="text" name="b_b5e9771d295b9a44f4aff96a6_a8de836e2a" tabindex="-1" value="">
         </div>
         <p>&nbsp;</p>
-        <button type="submit" class="button is-primary is-large">Submit Appointment Request</button>
+        <button type="submit" class="button is-primary is-caps is-rounded has-shadow">Submit Appointment Request
+        </button>
     </form>
 </div>
 <script

@@ -1,6 +1,6 @@
 <template>
     <div class="control has-icons-left">
-        <flat-pickr v-model="date" :name="this.name" :placeholder="this.placeholder" :config="this.config" required></flat-pickr>
+        <flat-pickr v-model="date" :name="name" :placeholder="placeholder" :config="config" :required="required"></flat-pickr>
         <span class="icon is-small is-left">
             <i :class="['fa', this.icon ]"></i>
         </span>
@@ -14,19 +14,19 @@
     export default {
 
         props: {
-            name: this.name,
             placeholder: this.placeholder,
-            required: true,
+            required: this.required,
             config: this.config,
-            icon: this.icon
+            icon: this.icon,
+            name: this.name
         },
 
         data() {
             return {
-                date: null,
-                config: this.config
+                date: null
             }
         },
+
         components: {
             flatPickr
         }

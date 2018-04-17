@@ -1332,6 +1332,21 @@ body {
   }
 }
 
+//appointment request
+.appointment-form {
+  .radio.hoverable {
+    width: 100%;
+    padding: .25rem .5rem;
+    border-radius: 5px;
+    border: 1px solid transparent;
+  }
+  .radio.hoverable:hover {
+    border: 1px solid $primary;
+    background-color: #fafafa;
+  }
+}
+
+
 .clinic-news {
   display: flex;
   flex-direction: column;

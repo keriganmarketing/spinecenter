@@ -19,8 +19,10 @@ use Includes\Modules\Locations\Locations;
             </div>
         <?php } ?>
         <div class="location column is-narrow hospital-logo">
+            <a href="http://www.theneuromedicalcenter.com/spine-hospital/" target="_blank" >
             <img src="<?php echo get_template_directory_uri() . '/img/spine-hospital-of-louisiana.png'; ?>"
                  alt="" class="footer-watermark">
+            </a>
         </div>
     </div>
 </div>

@@ -1,9 +1,10 @@
 <template>
     <div class="control has-icons-left">
-        <flat-pickr v-model="date" :name="name" :placeholder="placeholder" :config="config" :required="required"></flat-pickr>
+        <flat-pickr v-model="date" class="input" :placeholder="placeholder" :config="config" ></flat-pickr>
         <span class="icon is-small is-left">
             <i :class="['fa', this.icon ]"></i>
         </span>
+        <input type="hidden" :name="name" :value="date" :required="required">
     </div>
 </template>
 

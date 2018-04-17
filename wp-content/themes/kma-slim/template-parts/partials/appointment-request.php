@@ -133,7 +133,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     <div class="control">
                         <strong>Subscribe to our eNewsletter?</strong>
                         <label class="radio">
-                            <input type="radio" name="newsletter_signup" <?= (isset($_GET['newsletter_signup']) && $_GET['newsletter_signup'] == 'yes' ? 'checked' : ''); ?> required>
+                            <input type="radio" name="newsletter_signup" <?= (isset($_GET['newsletter_signup']) && $_GET['newsletter_signup'] == 'no' ? '' : 'checked'); ?> required>
                             Yes
                         </label>
                         <label class="radio">

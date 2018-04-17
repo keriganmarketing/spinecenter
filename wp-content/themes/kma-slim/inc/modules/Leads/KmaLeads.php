@@ -57,10 +57,14 @@ class KmaLeads
                     'lead_info_name'                    => $name,
                     'lead_info_phone_number'            => $contactInfo['phone_number'],
                     'lead_info_email_address'           => $contactInfo['email_address'],
+                    'lead_info_date_of_birth'           => $contactInfo['dob']['month']. '/' .$contactInfo['dob']['day']. '/' .$contactInfo['dob']['year'],
                     'lead_info_date'                    => $contactInfo['requested_date'],
                     'lead_info_time'                    => $contactInfo['requested_time'],
                     'lead_info_location'                => $contactInfo['requested_location'],
                     'lead_info_physician'               => $contactInfo['requested_physician'],
+                    'lead_info_insurance_company'       => $contactInfo['insurance'],
+                    'lead_info_insurance_id_number'     => $contactInfo['insurance_id_number'],
+                    'lead_info_phone_on_card'           => $contactInfo['insurance_phone_number'],
                     'lead_info_additional_instructions' => $contactInfo['additional_instructions'],
                 ]
             ],
@@ -95,12 +99,15 @@ class KmaLeads
             'Name'                   => $name,
             'Phone Number'           => $contactInfo['phone_number'],
             'Email Address'          => $contactInfo['email_address'],
+            'Date of Birth'          => $contactInfo['dob']['month']. '/' .$contactInfo['dob']['day']. '/' .$contactInfo['dob']['year'],
             'Requested Date'         => $contactInfo['requested_date'],
             'Requested Time'         => $contactInfo['requested_time'],
             'Requested Location'     => $contactInfo['requested_location'],
-            'Insurance'              => $contactInfo['insurance'],
-            'Requested Physician'    => $contactInfo['requested_physician'],
-            'Additional Information' => $contactInfo['additional_instructions'],
+            'Requested Provider'     => $contactInfo['requested_physician'],
+            'Insurance Company'      => $contactInfo['insurance'],
+            'Insurance ID#'          => $contactInfo['insurance_id_number'],
+            'Phone Number on Card'   => $contactInfo['insurance_phone_number'],
+            'Additional Information' => $contactInfo['additional_instructions']
         ];
 
         $tableData = '';
@@ -161,10 +168,14 @@ class KmaLeads
                 'Name'                      => 'locked',
                 'Phone Number'              => 'locked',
                 'Email Address'             => 'locked',
+                'Date of Birth'             => 'locked',
                 'Physician'                 => 'locked',
                 'Location'                  => 'locked',
                 'Date'                      => 'locked',
                 'Time'                      => 'locked',
+                'Insurance Company'         => 'locked',
+                'Insurance ID Number'       => 'locked',
+                'Phone on Card'             => 'locked',
                 'Additional Instructions'   => 'locked'
             ]
         );

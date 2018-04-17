@@ -113,7 +113,7 @@ include(locate_template('template-parts/partials/top.php'));
 
                             <div class="column">
                                 <div class="sidebar-module physician-list">
-                                    <p class="sidebar-title">Choose another doctor</p>
+                                    <p class="sidebar-title">Choose another provider</p>
                                     <ul class="none">
                                         <?php $orthopedicSurgeons = $physicians->getPhysicians();
                                         foreach ($orthopedicSurgeons as $doctor){

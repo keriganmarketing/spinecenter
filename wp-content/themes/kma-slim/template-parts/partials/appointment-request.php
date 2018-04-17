@@ -191,7 +191,8 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                                             <input type="radio" name="requested_physician"
                                                    value="<?php echo $physician['name']; ?>" <?php echo $requestedPhysician == $physician['slug'] ? 'checked' : '' ?>
                                                    required>
-                                            <?php echo $physician['name']; ?><br>
+                                            <?php echo $physician['name']; ?>
+                                            <p class="help">&nbsp;</p>
                                         </label>
                                     </div>
                                 </div>

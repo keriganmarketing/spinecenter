@@ -207,7 +207,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                 <h3 class="title is-secondary">Insurance Information <em>(if applicable)</em></h3>
             </div>
 
-            <div class="column is-4">
+            <div class="column is-6-tablet is-4-desktop is-3-fullhd">
                 <div class="field">
                     <label class="label">Insurance Company</label>
                     <div class="control">
@@ -224,7 +224,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     </div>
                 </div>
             </div>
-            <div class="column is-4">
+            <div class="column is-6-tablet is-4-desktop is-3-fullhd">
                 <div class="field">
                     <label class="label">Insurance ID#</label>
                     <div class="control">
@@ -234,7 +234,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     </div>
                 </div>
             </div>
-            <div class="column is-4">
+            <div class="column is-6-tablet is-4-desktop is-3-fullhd">
                 <div class="field">
                     <label class="label">Phone Number on Back of Card</label>
                     <div class="control">

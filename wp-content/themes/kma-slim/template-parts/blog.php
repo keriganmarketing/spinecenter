@@ -15,7 +15,7 @@ include(locate_template('template-parts/partials/top.php'));
             <section class="header section">
                 <div class="header-container">
                     <div class="container">
-                        <p class="title is-1"><?php echo ($headline == 'Archives' ? 'News' : $headline); ?></p>
+                        <p class="title is-1"><?php echo ($headline == 'Archives' ? 'Spine Articles' : $headline); ?></p>
                     </div>
                 </div>
             </section>

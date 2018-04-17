@@ -98,7 +98,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                             <label class="label">&nbsp;</label>
                             <label class="label sr-only">Day</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="DD" name="day"
+                                <input class="input" type="text" placeholder="DD" name="dob[day]"
                                        style="width: 5rem;"
                                        value="<?= (isset($_GET['dob']['day']) ? $_GET['dob']['day'] : ''); ?>"
                                        required maxlength="2">
@@ -110,7 +110,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                             <label class="label">&nbsp;</label>
                             <label class="label sr-only">Year</label>
                             <div class="control">
-                                <input class="input" type="text" placeholder="YYYY" name="year"
+                                <input class="input" type="text" placeholder="YYYY" name="dob[year]"
                                        style="width: 6rem;"
                                        value="<?= (isset($_GET['dob']['year']) ? $_GET['dob']['year'] : ''); ?>"
                                        required maxlength="4">
@@ -143,7 +143,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                                          :config="{ enableTime: true, required: true, noCalendar: true, minuteIncrement: 15, appendTo: requested_time, time_24hr: false, dateFormat: 'h:i K' }"></date-picker>
                         </div>
                     </div>
-                    <div class="column is-6-tablet is-4-desktop">
+                    <div class="column is-12-tablet is-4-desktop">
                         <div class="field">
                             <label class="label">Desired Location</label>
                             <div class="control">
@@ -207,12 +207,12 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                 <h3 class="title is-secondary">Insurance Information <em>(if applicable)</em></h3>
             </div>
 
-            <div class="column is-6-tablet is-4-desktop is-3-fullhd">
+            <div class="column is-12-tablet is-4-desktop">
                 <div class="field">
                     <label class="label">Insurance Company</label>
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select name="insurance" required>
+                            <select name="insurance">
                                 <option value="">Select a carrier</option>
                                 <?php foreach (getInsuranceCarriers() as $carrier) { ?>
                                     <option value="<?= $carrier; ?>" <?= isset($_GET['insurance']) && $_GET['insurance'] == $carrier ? 'selected' : '' ?> >
@@ -224,24 +224,22 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                     </div>
                 </div>
             </div>
-            <div class="column is-6-tablet is-4-desktop is-3-fullhd">
+            <div class="column is-6-tablet is-4-desktop">
                 <div class="field">
                     <label class="label">Insurance ID#</label>
                     <div class="control">
                         <input class="input" type="text" placeholder="" name="insurance_id_number"
-                               value="<?= (isset($_GET['insurance_id_number']) ? $_GET['insurance_id_number'] : ''); ?>"
-                               required>
+                               value="<?= (isset($_GET['insurance_id_number']) ? $_GET['insurance_id_number'] : ''); ?>">
                     </div>
                 </div>
             </div>
-            <div class="column is-6-tablet is-4-desktop is-3-fullhd">
+            <div class="column is-6-tablet is-4-desktop">
                 <div class="field">
                     <label class="label">Phone Number on Back of Card</label>
                     <div class="control">
                         <input class="input phone-number-mask" type="phone" placeholder="(###) ###-####"
                                name="insurance_phone_number"
-                               value="<?= (isset($_GET['insurance_phone_number']) ? $_GET['insurance_phone_number'] : ''); ?>"
-                               required>
+                               value="<?= (isset($_GET['insurance_phone_number']) ? $_GET['insurance_phone_number'] : ''); ?>">
                     </div>
                 </div>
             </div>

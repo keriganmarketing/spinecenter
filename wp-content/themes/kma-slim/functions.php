@@ -129,6 +129,23 @@ function getPageChildren($pageName, $postChildren = '')
     //return $children;
 }
 
+function getMonths(){
+    return [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December'
+    ];
+}
+
 function getInsuranceCarriers(){
     return [
         'Access Care',

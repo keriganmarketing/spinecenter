@@ -27530,7 +27530,7 @@ var app = new Vue({
         menuItems: {},
         slickOptions: {
             arrows: true,
-            autoplay: true,
+            autoplay: false,
             autoplaySpeed: 3000,
             prevArrow: '<span class="bubble-icon left" ><i class="fa fa-play fa-rotate-180" aria-hidden="true"></i></span>',
             nextArrow: '<span class="bubble-icon right" ><i class="fa fa-play" aria-hidden="true"></i></span>',

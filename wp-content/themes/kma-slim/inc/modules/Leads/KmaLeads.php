@@ -100,17 +100,20 @@ class KmaLeads
             'Name'                   => $name,
             'Phone Number'           => $contactInfo['phone_number'],
             'Email Address'          => $contactInfo['email_address'],
-            'Date of Birth'          => $contactInfo['dob']['month']. ' ' .$contactInfo['dob']['day']. ', ' .$contactInfo['dob']['year'],
             'Requested Date'         => $contactInfo['requested_date'],
             'Requested Time'         => $contactInfo['requested_time'],
             'Requested Location'     => $contactInfo['requested_location'],
-            'lead_info_patient_status'          => $contactInfo['new_current'],
+            'Patient Status'         => $contactInfo['new_current'],
             'Requested Provider'     => $contactInfo['requested_physician'],
             'Insurance Company'      => $contactInfo['insurance'],
             'Insurance ID#'          => $contactInfo['insurance_id_number'],
             'Phone Number on Card'   => $contactInfo['insurance_phone_number'],
             'Additional Information' => $contactInfo['additional_instructions']
         ];
+
+        if($contactInfo['dob']['month'] != '' && $contactInfo['dob']['day'] != '' && $contactInfo['dob']['year'] != '' ){
+            $requestData['Date of Birth'] = $contactInfo['dob']['month']. ' ' .$contactInfo['dob']['day']. ', ' .$contactInfo['dob']['year'];
+        }
 
         $tableData = '';
         foreach ($requestData as $key => $var) {

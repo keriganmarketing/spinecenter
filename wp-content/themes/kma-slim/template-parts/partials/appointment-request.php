@@ -133,6 +133,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                                 <label class="label">Desired Date</label>
                                 <div class="field flatpickr" id="requested_date">
                                     <date-picker
+                                            appendto="requested_date"
                                             icon="fa-calendar"
                                             placeholder="Select a date"
                                             name="requested_date"
@@ -140,7 +141,6 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                                             :config="{
                                         dateFormat: 'F j, Y',
                                         minDate: 'today',
-                                        appendTo: requested_date,
                                         disable: [
                                             function(date) {
                                                 // disable weekends
@@ -164,7 +164,6 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                                         enableTime: true,
                                         noCalendar: true,
                                         minuteIncrement: 15,
-                                        appendTo: requested_time,
                                         time_24hr: false,
                                         dateFormat: 'h:i K',
                                         minDate: '8:00',

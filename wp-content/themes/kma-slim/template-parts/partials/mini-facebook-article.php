@@ -26,7 +26,7 @@ $date     = date('M j, Y',strtotime($fbPost->created_time));
         <?php } ?>
         <div class="card-content has-text-centered">
             <p class="posted-on is-bold">Posted <?= $date; ?></p>
-            <p class="post-text"><?= $fbPost->message; ?></p>
+            <p class="post-text"><?= wp_trim_words($fbPost->message,20,'...'); ?></p>
             <a class="facebook cta-link is-bold is-caps" target="_blank" href="<?= $fbPost->permalink_url; ?>">Read more on Facebook</a>
         </div>
     </div>

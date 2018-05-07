@@ -14,7 +14,6 @@
     "cross-env": "^5.1.4",
     "font-awesome": "^4.7.0",
     "laravel-mix": "0.*",
-    "vue": "^2.5.16",
     "webpack": "^3.11.0"
   },
   "dependencies": {
@@ -32,6 +31,7 @@
     "jquery-mask-plugin": "^1.14.12",
     "loader-utils": "^1.1.0",
     "purgecss-webpack-plugin": "^0.22.0",
+    "vue": "^2.5.16",
     "vue-flatpickr-component": "^7.0.2",
     "vue-parallax-js": "0.0.5",
     "vue-slick": "^1.1.12",

@@ -27,7 +27,7 @@ class KmaLeads
         $this->domain = 'spinecenterbr.com';
 
         //separate multiple email addresses with a ';'
-        $this->adminEmail = 'bryan@kerigan.com';
+        $this->adminEmail = 'info@spinecenterbr.com';
         //$this->ccEmail    = 'web@kerigan.com'; //Admin email only
         $this->bccEmail   = 'support@kerigan.com';
     }

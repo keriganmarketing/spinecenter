@@ -27,7 +27,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
 ?>
 <div class="container">
     <div class="intro-text">
-        <?= $message != '' ? '<article class="message is-success"><div class="message-body"><p>' . $message . '</p></div>
+        <?= $message != '' ? '<article id="appointment-request-submitted" class="message is-success"><div class="message-body"><p>' . $message . '</p></div>
 </article>' : ''; ?>
         <p class="help" style="margin-bottom:1rem;">*You must complete all fields.</p>
     </div>

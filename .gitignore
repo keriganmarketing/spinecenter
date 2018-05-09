@@ -10,6 +10,7 @@ wp-config.php
 wp-content/themes/kma-slim/vendor/
 
 # Untracked prod files
-# wp-content/uploads/**
-# wp-admin/**
-# wp-includes/**
+wp-content/uploads/**
+wp-admin/**
+wp-includes/**
+eblasts/**

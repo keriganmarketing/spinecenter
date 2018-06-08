@@ -15,10 +15,10 @@ class CommentBox
     {
         date_default_timezone_set('America/Chicago');
 
-        $this->domain = 'boneandjointclinicbr.com';
+        $this->domain = 'spinecenterbr.com';
 
         //separate multiple email addresses with a ';'
-        $this->adminEmail = 'bryan@kerigan.com';
+        $this->adminEmail = 'info@spinecenterbr.com, ashleykathrynherrera@gmail.com';
         //$this->adminEmail = 'web@kerigan.com';
         //$this->ccEmail    = 'web@kerigan.com'; //Admin email only
         $this->bccEmail   = 'support@kerigan.com;';

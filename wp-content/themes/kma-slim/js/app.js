@@ -16,7 +16,7 @@ import GoogleMapPin from './components/GoogleMapPin.vue';
 import Slick from 'vue-slick';
 import VueParallaxJs from 'vue-parallax-js';
 import FlatPickr from './components/FlatPickr.vue';
-
+import AutoiFrame from './components/AutoiFrame.vue';
 
 window.Vue.use(VueParallaxJs, {
     minWidth: 1000,
@@ -37,7 +37,8 @@ let app = new Vue({
         'google-map': GoogleMap,
         'pin': GoogleMapPin,
         'slick': Slick,
-        'date-picker': FlatPickr
+        'date-picker': FlatPickr,
+        'auto-iframe': AutoiFrame
     },
 
     data: {

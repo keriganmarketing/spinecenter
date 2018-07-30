@@ -239,7 +239,7 @@ if ($_POST['email_address'] != '' && $_POST['b_b5e9771d295b9a44f4aff96a6_a8de836
                                                            value="<?php echo $physician['name']; ?>" <?php echo $requestedPhysician == $physician['slug'] ? 'checked' : '' ?>
                                                            required>
                                                     <?php echo $physician['name']; ?>
-                                                    <?php echo ($physician['slug'] == 'dr-matthew-a-neumann' ? '<small>Baton Rouge location only</small>' : ''); ?>
+                                                    <?php echo ($physician['slug'] == 'dr-matthew-a-neumann' ? '<p class="help">Baton Rouge location only</p>' : ''); ?>
                                                 </label>
                                             </div>
                                         </div>

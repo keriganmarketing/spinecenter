@@ -18,7 +18,11 @@
             'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-MN4PCKB');</script>
     <!-- End Google Tag Manager -->
-	<?php wp_head(); ?>
+    <?php wp_head(); ?>
+    
+    <?php if(is_page(23)){ ?>
+        <script src="https://maps.googleapis.com/maps/api/js?key=" ></script>
+    <?php } ?>
 </head>
 
 <body <?php body_class(); ?> >

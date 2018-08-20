@@ -10,7 +10,7 @@ use Includes\Modules\Locations\Locations;
  */
 ?>
 <div class="location-map">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRXeRhZCIYcKhtc-rfHCejAJsEW9rYtt4" ></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAPS_API; ?>" ></script>
     <div class="full-width-map">
         <google-map :latitude="30.442075" :longitude="-91.368458" :zoom="10" name="locations" >
             <?php $locations = new Locations();

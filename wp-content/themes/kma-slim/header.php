@@ -21,7 +21,7 @@
     <?php wp_head(); ?>
     
     <?php if(is_page(23)){ ?>
-        <script src="https://maps.googleapis.com/maps/api/js?key=" ></script>
+        <script src="https://maps.googleapis.com/maps/api/js?key=<?php echo GOOGLE_MAPS_API; ?>" ></script>
     <?php } ?>
 </head>
 

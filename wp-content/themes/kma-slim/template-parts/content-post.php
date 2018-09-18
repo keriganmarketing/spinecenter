@@ -10,9 +10,9 @@ use Includes\Modules\Team\Physicians;
 $headline = ($post->page_information_headline != '' ? $post->page_information_headline : $post->post_title);
 $subhead  = ($post->page_information_subhead != '' ? $post->page_information_subhead : '');
 $featuredPhoto = get_the_post_thumbnail( $post, 'post-thumbnail');
-$author = wp_get_object_terms($post,'category');
+// $author = get_the_terms($post,'category');
 $physicians = new Physicians();
-$physician = $physicians->getPhysicianBySlug($author[0]->slug);
+$physician = $physicians->getPhysicianBySlug(get_the_terms($post,'category')[0]->slug);
 
 
 

@@ -201,7 +201,7 @@ class JchOptimizeParser extends JchOptimizeBase
                 $i  = $this->ifRegex();
                 $ns = '<noscript\b[^>]*+>(?><?[^<]*+)*?</noscript\s*+>';
 
-                $sRegex = "#(?>(?:<(?!!))?[^<]*+(?:$i|$ns|<!)?)*?\K(?:$j|$c|\K$)#six";
+                $sRegex = "#(?>(?:<(?!(?:!--|noscript\b)))?[^<]*+(?:$i|$ns|<!)?)*?\K(?:$j|$c|\K$)#six";
 
 
                 JCH_DEBUG ? JchPlatformProfiler::stop('InitSearch', TRUE) : null;

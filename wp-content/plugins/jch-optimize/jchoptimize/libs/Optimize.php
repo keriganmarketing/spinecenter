@@ -32,6 +32,8 @@ class Optimize
         const BLOCK_COMMENTS = '/\*(?>[^/\*]++|//|\*(?!/)|(?<!\*)/)*+\*/';
         //regex for line comments
         const LINE_COMMENTS = '//[^\r\n]*+';
+	//regex for HTML comments
+	const HTML_COMMENTS = '(?:(?:<!?--|-->)[^\r\n]*+)|(?:<!?\[CDATA\[|\]\]>)';
 
         protected $_debug    = false;
         protected $_regexNum = -1;

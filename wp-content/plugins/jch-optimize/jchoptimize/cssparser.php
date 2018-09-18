@@ -229,7 +229,9 @@ class JchOptimizeCssParser extends JchOptimizeCssParserBase
                                         }
                                         else
                                         {
-                                                $sMediaQuery .= $aParentMediaQuery['media_type'] . ' and ' . $aChildMediaQuery['media_type'];
+						//Two seperate media types are nested so we combine them to form an unknown type
+						//so the media query is treated as false but still syntactically correct
+                                                $sMediaQuery .= $aParentMediaQuery['media_type'] . $aChildMediaQuery['media_type'];
                                         }
                                 }
 

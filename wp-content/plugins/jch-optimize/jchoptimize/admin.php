@@ -54,7 +54,6 @@ class JchOptimizeAdmin
                         $sId       = md5('getAdminLinks' . JCH_VERSION . serialize($hash));
                         $aFunction = array($this, 'generateAdminLinks');
                         $aArgs     = array($oObj, $sCss);
-                        $iLifeTime = (int) $this->params->get('cache_lifetime', '1') * 24 * 60 * 60;
 
                         $this->links = JchPlatformCache::getCallbackCache($sId, $aFunction, $aArgs);
                 }

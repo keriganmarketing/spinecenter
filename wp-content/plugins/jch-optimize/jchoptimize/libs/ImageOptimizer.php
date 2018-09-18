@@ -67,6 +67,11 @@ class ImageOptimizer
 
 		$response = $oFileRetriever->getFileContents($url, $data, $aHeaders);
 
+		if($oFileRetriever->response_code === 0 && $oFileRetriever->response_error !== '')
+		{
+			return new \JchOptimizeJson(new Exception($oFileRetriever->response_error), 500);
+		}
+
 		return json_decode($response);
 	}
 
@@ -93,7 +98,7 @@ class ImageOptimizer
                 if ($error > 0)
                 {
                         $curl_error = new RuntimeException(sprintf('cURL returned with the following error: "%s"', $message), $error);
-			$response = new JchOptimizeJson($curl_error);
+			$response = new \JchOptimizeJson($curl_error);
                 }
 
 		return array(

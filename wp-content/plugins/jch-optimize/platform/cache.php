@@ -73,7 +73,7 @@ class JchPlatformCache implements JchInterfaceCache
 
                 $file = JCH_CACHE_DIR . $filename;
 
-                if (!file_exists($file) || filemtime($file) > (time() + 86400))
+                if (!file_exists($file) || time() > (filemtime($file) + 86400))
                 {
                         $contents = call_user_func_array($function, $args);
 

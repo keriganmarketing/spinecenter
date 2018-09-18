@@ -93,7 +93,7 @@ function jch_options_page()
                                 <div class="tab-pane active" id="description">
                                         <div id="extension-container" style="text-align:left;">
                                                 <h1>JCH Optimize Plugin</h1>
-                                                <h3>(Version 2.2.1)</h3>
+                                                <h3>(Version 2.2.2)</h3>
                                                 <?php
                                                 $subscribe_message = sprintf( wp_kses( __( 'This is the free version of JCH Optimize for WordPress. For access to advanced features, please <a href="%s" target="_blank">purchase the Pro Version!</a>', 'jch-optimize' ), array(  'a' => array( 'href' => array(), 'target' => array() ) ) ), esc_url( $subscribe_url ) );
                                                 
@@ -695,7 +695,7 @@ function jch_options_html_minify_level_string()
 
 function jch_options_htaccess_string()
 {
-        $description = __('By default auto is selected and the plugin will detect if mod_rewrite is enabled and will use \'url rewriting\' to remove the query from the link to the combined file to promote proxy caching. The plugin will then automatically select \'Yes\' or \'No\' based on whether support for url rewriting is detected. You can manually select the one you want if the plugin got it wrong.',
+        $description = __('By default the combined files will be loaded as static css and javascript files. You would need to include directives in your .htaccess file to gzip these files. You can use PHP files instead that will be gzipped if that option is set. PHP files can be loaded with a query attached with the information to find the combined files, or you can use url rewrite if it\'s available on the server so the files can be masked as static files. If your server prohibits the use of the Options +FollowSymLinks directive in .htaccess files use the respective option.',
                           'jch-optimize');
 
         $values = array(

@@ -315,7 +315,7 @@ class JchOptimizeLinkBuilder extends JchOptimizelinkBuilderBase
         {
                 JCH_DEBUG ? JchPlatformProfiler::start('RunCronTasks') : null;
 
-                $sId = md5($this->oParser->sFileHash . 'CRONTASKS');
+                $sId = md5('CRONTASKS');
 
                 $aArgs = array($this->oParser);
 
@@ -532,7 +532,7 @@ class JchOptimizeLinkBuilder extends JchOptimizelinkBuilderBase
         {
                 $bCached   = JchPlatformCache::getCallbackCache($sId, $aFunction, $aArgs);
 
-                if ($bCached === FALSE)
+		if ($bCached === FALSE) 
                 {
                         throw new Exception('Error creating cache file');
                 }
@@ -568,7 +568,7 @@ class JchOptimizeLinkBuilder extends JchOptimizelinkBuilderBase
          */
         protected function cleanScript($sScript)
         {
-                if (!$this->isXhtml())
+                if (!JchOptimizeHelper::isXhtml($this->oParser->sHtml))
                 {
                         $sScript = str_replace(array('<script type="text/javascript"><![CDATA[', ']]></script>'),
                                                array('<script type="text/javascript">', '</script>'), $sScript);

@@ -14,8 +14,6 @@ $featuredPhoto = get_the_post_thumbnail( $post, 'post-thumbnail');
 $physicians = new Physicians();
 $physician = $physicians->getPhysicianBySlug(get_the_terms($post,'category')[0]->slug);
 
-
-
 $sidebar = get_the_terms($post,'layout');
 $getSidebar = (isset($sidebar[0]->slug) ? $sidebar[0]->slug : '');
 
@@ -39,6 +37,7 @@ include(locate_template('template-parts/partials/top.php'));
                                 <?php include(locate_template('template-parts/sidebars/featured-image-sidebar.php')); ?>
                                 <h3>Share this:</h3>
                                 <?php
+                                // echo '<pre>',print_r(get_the_terms($post,'category')),'</pre>';
                                 //share links
                                 $facebookShare = 'https://www.facebook.com/sharer/sharer.php?u=' . get_the_permalink() . '&display=popup';
                                 $twitterShare = 'https://twitter.com/home?status=' . get_the_permalink();

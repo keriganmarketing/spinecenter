@@ -2,7 +2,7 @@
     <div class="container">
         <div class="columns is-justified is-aligned">
             <div class="column is-narrow">
-                <img src="<?php echo get_template_directory_uri() . '/img/actual-size-incision.png'; ?>" >
+                <img src="<?php echo get_template_directory_uri() . '/img/actual-size-incision.png'; ?>" alt="picture (actual size) of Minimally invasive spinal fusion surgery in Baton Rouge" >
             </div>
             <div class="column is-narrow ad-text">
                 <p class="title" >Spine&nbsp;Surgery. Actual&nbsp;Size.</p>

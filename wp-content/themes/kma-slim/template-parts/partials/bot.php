@@ -40,7 +40,8 @@ use Includes\Modules\Social\SocialSettingsPage;
             <h2 class="line-left line-right light">
                 <span class="line"></span>
                 <img class="bot-footer-watermark" src="<?php echo get_template_directory_uri() . '/img/logo-white.png'; ?>"
-                     alt="">
+                    alt="<?php echo get_bloginfo(); ?>"
+                    title="<?php echo get_bloginfo(); ?>">
                 <span class="line"></span>
             </h2>
         </div>

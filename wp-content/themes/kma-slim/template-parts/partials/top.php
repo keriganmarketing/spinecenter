@@ -16,7 +16,8 @@ use Includes\Modules\Navwalker\BulmaNavwalker;
             <div id="TopNavMenu" class="navbar-menu">
                 <a id="main-logo" href="/"><img class="logo"
                                                 src="<?php echo get_template_directory_uri() . '/img/logo-duo-tone.png'; ?>"
-                                                alt="<?php echo get_bloginfo(); ?>"></a>
+                                                alt="<?php echo get_bloginfo(); ?>"
+                                                title="<?php echo get_bloginfo(); ?>"></a>
                 <?php wp_nav_menu([
                     'theme_location' => 'main-menu',
                     'container'      => false,

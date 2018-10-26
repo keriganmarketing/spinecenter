@@ -7,7 +7,7 @@ $date     = date('M j, Y',strtotime($fbPost->created_time));
     <div class="card social-module facebook has-text-centered <?= ($hasImage == true ? 'has-image' : 'no-image'); ?>">
         <?php if ($hasImage == true) { ?>
             <div class="card-image">
-                <img src="<?= $fbPost->full_picture; ?>">
+                <img src="<?= $fbPost->full_picture; ?>" alt="Best spine surgeon in Baton Rouge">
             </div>
         <?php } ?>
         <?php if ($isVideo == true) { ?>

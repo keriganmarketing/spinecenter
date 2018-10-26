@@ -21,7 +21,7 @@ use Includes\Modules\Locations\Locations;
         <div class="location column is-narrow hospital-logo">
             <a href="http://www.theneuromedicalcenter.com/spine-hospital/" target="_blank" >
             <img src="<?php echo get_template_directory_uri() . '/img/spine-hospital-of-louisiana.png'; ?>"
-                 alt="" class="footer-watermark">
+                 alt="The Spine Hospital of Louisiana at the NeuroMedical Center" title="The Spine Hospital of Louisiana at the NeuroMedical Center" class="footer-watermark">
             </a>
         </div>
     </div>

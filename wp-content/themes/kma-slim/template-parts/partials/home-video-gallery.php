@@ -15,7 +15,11 @@ $neumannVideo = $neumannVideo[0];
     <div class="columns is-justified is-multiline" >
         <div class="column is-12-tablet is-4-desktop has-text-right" @click="$emit('toggleModal', '<?php echo $mccarthyVideo['video_type']; ?>', '<?php echo $mccarthyVideo['video_code']; ?>')" >
             <a class="image-link" >
-                <img class="video" src="<?php echo ($mccarthyVideo['photo'] == '' ? 'https://i.ytimg.com/vi/' . $mccarthyVideo['video_code'] . '/0.jpg' : $mccarthyVideo['photo']); ?>">
+                <img 
+                    class="video" 
+                    src="<?php echo ($mccarthyVideo['photo'] == '' ? 'https://i.ytimg.com/vi/' . $mccarthyVideo['video_code'] . '/0.jpg' : $mccarthyVideo['photo']); ?>"
+                    alt="Best Surgeon for the spine in Baton Rouge" 
+                >
             </a>
 
             <a class="video-button button is-rounded is-primary is-glass" >PLAY&nbsp;<i class="fa fa-play" aria-hidden="true"></i></a></a>
@@ -29,7 +33,11 @@ $neumannVideo = $neumannVideo[0];
         </div>
         <div class="column is-6-tablet is-4-desktop has-text-right" @click="$emit('toggleModal', '<?php echo $harrodVideo['video_type']; ?>', '<?php echo $harrodVideo['video_code']; ?>')" >
             <a class="image-link" >
-                <img class="video" src="<?php echo ($harrodVideo['photo'] == '' ? 'https://i.ytimg.com/vi/' . $harrodVideo['video_code'] . '/0.jpg' : $harrodVideo['photo']); ?>">
+                <img 
+                    class="video" 
+                    src="<?php echo ($harrodVideo['photo'] == '' ? 'https://i.ytimg.com/vi/' . $harrodVideo['video_code'] . '/0.jpg' : $harrodVideo['photo']); ?>"
+                    alt="Minimally invasive spinal fusion surgery in Baton Rouge"
+                >
             </a>
 
             <a class="video-button button is-rounded is-primary is-glass" >PLAY&nbsp;<i class="fa fa-play" aria-hidden="true"></i></a></a>
@@ -43,7 +51,11 @@ $neumannVideo = $neumannVideo[0];
         </div>
         <div class="column is-6-tablet is-4-desktop has-text-right" @click="$emit('toggleModal', '<?php echo $neumannVideo['video_type']; ?>', '<?php echo $neumannVideo['video_code']; ?>')" >
             <a class="image-link" >
-                <img class="video" src="<?php echo ($neumannVideo['photo'] == '' ? 'https://i.ytimg.com/vi/' . $neumannVideo['video_code'] . '/0.jpg' : $neumannVideo['photo']); ?>">
+                <img 
+                    class="video" 
+                    src="<?php echo ($neumannVideo['photo'] == '' ? 'https://i.ytimg.com/vi/' . $neumannVideo['video_code'] . '/0.jpg' : $neumannVideo['photo']); ?>"
+                    alt="Best spinal expert in Baton Rouge"
+                >
             </a>
 
             <a class="video-button button is-rounded is-primary is-glass" >PLAY&nbsp;<i class="fa fa-play" aria-hidden="true"></i></a></a>
